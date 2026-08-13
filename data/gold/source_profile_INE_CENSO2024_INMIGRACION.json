@@ -1,0 +1,925 @@
+{
+  "workbook": "D4_Inmigracion-Internacional.xlsx",
+  "sheet_count": 6,
+  "sheet_names": [
+    "Nota",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5"
+  ],
+  "profiled_sheets": [
+    {
+      "sheet_name": "Nota",
+      "sample_rows": [
+        [
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          "Nota de presentación",
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          "Fecha de publicación: 30 de abril, 2025.",
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          "1. Introducción",
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          "\nEn el contexto de la segunda publicación de resultados del Censo de Población y Vivienda 2024, se entrega la siguiente serie de tablas con información sobre la población nacida fuera del país según sexo, grupos de edad y periodos de llegada a nivel nacional y regional. Además, se proporcionan tablas a nivel comunal y regional por país de nacimiento.\n\nLas tablas correspondientes a este documento son:\n\n1. Inmigrantes internacionales por sexo, según región.\n2. Inmigrantes internacionales por grupos de edad, según región.\n3. Inmigrantes internacionales por país de nacimiento, según región.\n4. Inmigrantes internacionales por país de nacimiento, según comuna.\n5. Inmigrantes internacionales por periodo de llegada a Chile, según región.",
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          "2. Definiciones",
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          "Variables",
+          null,
+          null,
+          "Definición"
+        ],
+        [
+          null,
+          "Código región",
+          null,
+          null,
+          "Refiere al código de identificación de cada región del país."
+        ],
+        [
+          null,
+          "Región",
+          null,
+          null,
+          "Corresponde al nombre de cada región del país."
+        ],
+        [
+          null,
+          "Código provincia",
+          null,
+          null,
+          "Refiere al código de identificación de la provincia de residencia habitual actual en el país"
+        ],
+        [
+          null,
+          "Provincia",
+          null,
+          null,
+          "Corresponde al nombre de cada provincia de residencia habitual actual en el país."
+        ],
+        [
+          null,
+          "Código comuna",
+          null,
+          null,
+          "Refiere al código único territorial de la comuna de residencia habitual actual en el país."
+        ],
+        [
+          null,
+          "Comuna",
+          null,
+          null,
+          "Corresponde al nombre de la comuna de residencia habitual actual en el país."
+        ]
+      ],
+      "sample_row_count": 18,
+      "sample_col_count": 5
+    },
+    {
+      "sheet_name": "1",
+      "sample_rows": [
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          "1. Inmigrantes internacionales por sexo, según región.",
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          "Código región",
+          "Región",
+          "Inmigrantes internacionales",
+          "Hombres",
+          "Mujeres",
+          "Razón hombre-mujer",
+          "Lugar de nacimiento no declarado"
+        ],
+        [
+          "0",
+          "País",
+          "1608650",
+          "776388",
+          "832262",
+          "93.3",
+          "113061"
+        ],
+        [
+          "15",
+          "Arica y Parinacota",
+          "36188",
+          "17044",
+          "19144",
+          "89",
+          "2010"
+        ],
+        [
+          "1",
+          "Tarapacá",
+          "84935",
+          "39736",
+          "45199",
+          "87.9",
+          "3019"
+        ],
+        [
+          "2",
+          "Antofagasta",
+          "124006",
+          "57501",
+          "66505",
+          "86.5",
+          "4660"
+        ],
+        [
+          "3",
+          "Atacama",
+          "25167",
+          "11942",
+          "13225",
+          "90.3",
+          "1944"
+        ],
+        [
+          "4",
+          "Coquimbo",
+          "44578",
+          "21515",
+          "23063",
+          "93.3",
+          "4394"
+        ],
+        [
+          "5",
+          "Valparaíso",
+          "100655",
+          "49687",
+          "50968",
+          "97.5",
+          "13402"
+        ],
+        [
+          "13",
+          "Metropolitana de Santiago",
+          "964835",
+          "465961",
+          "498874",
+          "93.4",
+          "56931"
+        ],
+        [
+          "6",
+          "Libertador General Bernardo O'Higgins",
+          "49272",
+          "24534",
+          "24738",
+          "99.2",
+          "3771"
+        ],
+        [
+          "7",
+          "Maule",
+          "42349",
+          "21328",
+          "21021",
+          "101.5",
+          "4425"
+        ],
+        [
+          "16",
+          "Ñuble",
+          "10934",
+          "5358",
+          "5576",
+          "96.1",
+          "1704"
+        ],
+        [
+          "8",
+          "Biobío",
+          "46933",
+          "23121",
+          "23812",
+          "97.1",
+          "3800"
+        ],
+        [
+          "9",
+          "La Araucanía",
+          "21077",
+          "10338",
+          "10739",
+          "96.3",
+          "5051"
+        ],
+        [
+          "14",
+          "Los Ríos",
+          "7508",
+          "3752",
+          "3756",
+          "99.9",
+          "1845"
+        ]
+      ],
+      "sample_row_count": 18,
+      "sample_col_count": 7
+    },
+    {
+      "sheet_name": "2",
+      "sample_rows": [
+        [
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          "2. Inmigrantes internacionales por grupos de edad, según región.",
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          "Código región",
+          "Región",
+          "Grupos de edad",
+          "Inmigrantes internacionales",
+          "Lugar de nacimiento no declarado"
+        ],
+        [
+          "0",
+          "País",
+          "Total País",
+          "1608650",
+          "113061"
+        ],
+        [
+          "0",
+          "País",
+          "0 a 14 años",
+          "215354",
+          "23041"
+        ],
+        [
+          "0",
+          "País",
+          "15 a 29 años",
+          "415219",
+          "25016"
+        ],
+        [
+          "0",
+          "País",
+          "30 a 44 años",
+          "618829",
+          "24009"
+        ],
+        [
+          "0",
+          "País",
+          "45 a 64 años",
+          "303345",
+          "21659"
+        ],
+        [
+          "0",
+          "País",
+          "65 años o más",
+          "55903",
+          "19336"
+        ],
+        [
+          "15",
+          "Arica y Parinacota",
+          "Total Región",
+          "36188",
+          "2010"
+        ],
+        [
+          "15",
+          "Arica y Parinacota",
+          "0 a 14 años",
+          "5153",
+          "380"
+        ],
+        [
+          "15",
+          "Arica y Parinacota",
+          "15 a 29 años",
+          "10161",
+          "495"
+        ],
+        [
+          "15",
+          "Arica y Parinacota",
+          "30 a 44 años",
+          "11864",
+          "548"
+        ],
+        [
+          "15",
+          "Arica y Parinacota",
+          "45 a 64 años",
+          "6950",
+          "400"
+        ],
+        [
+          "15",
+          "Arica y Parinacota",
+          "65 años o más",
+          "2060",
+          "187"
+        ],
+        [
+          "1",
+          "Tarapacá",
+          "Total Región",
+          "84935",
+          "3019"
+        ],
+        [
+          "1",
+          "Tarapacá",
+          "0 a 14 años",
+          "12929",
+          "619"
+        ]
+      ],
+      "sample_row_count": 18,
+      "sample_col_count": 5
+    },
+    {
+      "sheet_name": "3",
+      "sample_rows": [
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          "3. Inmigrantes internacionales por país de nacimiento, según región.",
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          "Código región",
+          "Región",
+          "País o continente de nacimiento",
+          "Inmigrantes internacionales",
+          "Hombres",
+          "Mujeres",
+          "Razón hombre-mujer"
+        ],
+        [
+          "0",
+          "País",
+          "Total nacidos fuera del país",
+          "1608650",
+          "776388",
+          "832262",
+          "93.3"
+        ],
+        [
+          "0",
+          "País",
+          "Argentina",
+          "70266",
+          "34614",
+          "35652",
+          "97.1"
+        ],
+        [
+          "0",
+          "País",
+          "Bolivia (Estado Plurinacional de)",
+          "168083",
+          "74977",
+          "93106",
+          "80.5"
+        ],
+        [
+          "0",
+          "País",
+          "Colombia",
+          "197813",
+          "91384",
+          "106429",
+          "85.9"
+        ],
+        [
+          "0",
+          "País",
+          "Haití",
+          "80781",
+          "48177",
+          "32604",
+          "147.8"
+        ],
+        [
+          "0",
+          "País",
+          "Perú",
+          "233432",
+          "108547",
+          "124885",
+          "86.9"
+        ],
+        [
+          "0",
+          "País",
+          "Venezuela (República Bolivariana de)",
+          "669408",
+          "326127",
+          "343281",
+          "95"
+        ],
+        [
+          "0",
+          "País",
+          "Otros países de América del Sur",
+          "78860",
+          "36533",
+          "42327",
+          "86.3"
+        ],
+        [
+          "0",
+          "País",
+          "Otros países de América Central y El Caribe",
+          "40559",
+          "18421",
+          "22138",
+          "83.2"
+        ],
+        [
+          "0",
+          "País",
+          "América del Norte",
+          "11329",
+          "5961",
+          "5368",
+          "111"
+        ],
+        [
+          "0",
+          "País",
+          "Europa",
+          "33563",
+          "17714",
+          "15849",
+          "111.8"
+        ],
+        [
+          "0",
+          "País",
+          "Asia",
+          "20047",
+          "11449",
+          "8598",
+          "133.2"
+        ],
+        [
+          "0",
+          "País",
+          "África",
+          "1580",
+          "950",
+          "630",
+          "150.8"
+        ],
+        [
+          "0",
+          "País",
+          "Oceanía",
+          "1477",
+          "806",
+          "671",
+          "120.1"
+        ]
+      ],
+      "sample_row_count": 18,
+      "sample_col_count": 7
+    },
+    {
+      "sheet_name": "4",
+      "sample_rows": [
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          "4. Inmigrantes internacionales por país de nacimiento, según comuna.",
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          "Código región",
+          "Región",
+          "Código provincia",
+          "Provincia",
+          "Codigo comuna",
+          "Comuna",
+          "País o continente de nacimiento",
+          "Inmigrantes internacionales"
+        ],
+        [
+          "0",
+          "País",
+          "0",
+          "País",
+          "0",
+          "País",
+          "Total nacidos fuera del país",
+          "1608650"
+        ],
+        [
+          "0",
+          "País",
+          "0",
+          "País",
+          "0",
+          "País",
+          "Argentina",
+          "70266"
+        ],
+        [
+          "0",
+          "País",
+          "0",
+          "País",
+          "0",
+          "País",
+          "Bolivia (Estado Plurinacional de)",
+          "168083"
+        ],
+        [
+          "0",
+          "País",
+          "0",
+          "País",
+          "0",
+          "País",
+          "Colombia",
+          "197813"
+        ],
+        [
+          "0",
+          "País",
+          "0",
+          "País",
+          "0",
+          "País",
+          "Haití",
+          "80781"
+        ],
+        [
+          "0",
+          "País",
+          "0",
+          "País",
+          "0",
+          "País",
+          "Perú",
+          "233432"
+        ],
+        [
+          "0",
+          "País",
+          "0",
+          "País",
+          "0",
+          "País",
+          "Venezuela (República Bolivariana de)",
+          "669408"
+        ],
+        [
+          "0",
+          "País",
+          "0",
+          "País",
+          "0",
+          "País",
+          "Otros países de América del Sur",
+          "78860"
+        ],
+        [
+          "0",
+          "País",
+          "0",
+          "País",
+          "0",
+          "País",
+          "Otros países de América Central y El Caribe",
+          "40559"
+        ],
+        [
+          "0",
+          "País",
+          "0",
+          "País",
+          "0",
+          "País",
+          "América del Norte",
+          "11329"
+        ],
+        [
+          "0",
+          "País",
+          "0",
+          "País",
+          "0",
+          "País",
+          "Europa",
+          "33563"
+        ],
+        [
+          "0",
+          "País",
+          "0",
+          "País",
+          "0",
+          "País",
+          "Asia",
+          "20047"
+        ],
+        [
+          "0",
+          "País",
+          "0",
+          "País",
+          "0",
+          "País",
+          "África",
+          "1580"
+        ],
+        [
+          "0",
+          "País",
+          "0",
+          "País",
+          "0",
+          "País",
+          "Oceanía",
+          "1477"
+        ]
+      ],
+      "sample_row_count": 18,
+      "sample_col_count": 8
+    },
+    {
+      "sheet_name": "5",
+      "sample_rows": [
+        [
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          "5. Inmigrantes internacionales por periodo de llegada a Chile, según región.",
+          null,
+          null,
+          null
+        ],
+        [
+          "Código región",
+          "Región",
+          "Periodo de llegada",
+          "Inmigrantes internacionales /R"
+        ],
+        [
+          "0",
+          "País",
+          "Total nacidos fuera del país",
+          "1608650"
+        ],
+        [
+          "0",
+          "País",
+          "Entre 2023 y 2024",
+          "188790"
+        ],
+        [
+          "0",
+          "País",
+          "Entre 2020 y 2022",
+          "366878"
+        ],
+        [
+          "0",
+          "País",
+          "Entre 2017 y 2019",
+          "533689"
+        ],
+        [
+          "0",
+          "País",
+          "Entre 2014 y 2016",
+          "190158"
+        ],
+        [
+          "0",
+          "País",
+          "Entre 2010 y 2013",
+          "111485"
+        ],
+        [
+          "0",
+          "País",
+          "Entre 2000 y 2009",
+          "121553"
+        ],
+        [
+          "0",
+          "País",
+          "Entre 1990 y 1999",
+          "54026"
+        ],
+        [
+          "0",
+          "País",
+          "Antes de 1990",
+          "36811"
+        ],
+        [
+          "0",
+          "País",
+          "Periodo de llegada no declarado",
+          "5260"
+        ],
+        [
+          "15",
+          "Arica y Parinacota",
+          "Total nacidos fuera del país",
+          "36188"
+        ],
+        [
+          "15",
+          "Arica y Parinacota",
+          "Entre 2023 y 2024",
+          "4245"
+        ],
+        [
+          "15",
+          "Arica y Parinacota",
+          "Entre 2020 y 2022",
+          "7486"
+        ],
+        [
+          "15",
+          "Arica y Parinacota",
+          "Entre 2017 y 2019",
+          "7627"
+        ]
+      ],
+      "sample_row_count": 18,
+      "sample_col_count": 4
+    }
+  ],
+  "profile_semantics": "STRUCTURE_ONLY_NOT_DATA_INTERPRETATION",
+  "source_id": "INE_CENSO2024_INMIGRACION",
+  "source_owner": "INE",
+  "context_only": true,
+  "aml_interpretation": "NONE"
+}

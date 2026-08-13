@@ -1,0 +1,15 @@
+{
+  "hub": "SECTOR_HUB",
+  "version": "1.0",
+  "sector_rows": 55,
+  "mapping_rows": 74,
+  "mapping_status_counts": {
+    "VALIDATED_RULE": 26,
+    "AMBIGUOUS": 25,
+    "EMPIRICAL_CANDIDATE": 20,
+    "NO_EQUIVALENCE": 3
+  },
+  "all_acteco_only_membership_assertions_blocked": true,
+  "source_workbook": "maestro_equivalencias_uaf_sii_v0_1.xlsx",
+  "context_risk_imported_from_sectorial_exploration": false
+}
