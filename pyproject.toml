@@ -1,18 +1,14 @@
-[build-system]
-requires = ["setuptools>=68"]
-build-backend = "setuptools.build_meta"
-
 [project]
 name = "context-hub-chile"
 version = "0.1.0"
-description = "Capa contextual interoperable para el sistema de radares OSINT"
+description = "Context Hub territorial, económico, sectorial y de exposición al efectivo para un sistema OSINT de radares."
 requires-python = ">=3.11"
 dependencies = [
   "requests>=2.32,<3",
+  "pandas>=2.2,<3",
+  "openpyxl>=3.1,<4",
+  "xlrd>=2.0,<3"
 ]
-
-[tool.setuptools.packages.find]
-where = ["src"]
 
 [tool.pytest.ini_options]
 pythonpath = ["src"]

@@ -1,0 +1,22 @@
+{
+  "context_only": true,
+  "sales_measure": "SII_SALES_BAND_NOT_EXACT_ENTITY_REVENUE",
+  "min_peer_count": 20,
+  "peer_hierarchy": [
+    ["activity_code", "commune_code", "year"],
+    ["activity_code", "region_code", "year"],
+    ["activity_code", "year"]
+  ],
+  "features": [
+    "sales_band_percentile",
+    "workers_percentile",
+    "company_age_percentile",
+    "sales_worker_gap",
+    "company_sales_band_delta_1y",
+    "sector_growth_yoy",
+    "region_sector_gdp_growth_yoy",
+    "economic_divergence_index_v1"
+  ],
+  "missing_policy": "DO_NOT_IMPUTE_ZERO",
+  "output_semantics": "CONTEXTUAL_ANOMALY_NOT_AML_PROBABILITY"
+}

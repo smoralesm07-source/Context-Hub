@@ -1,0 +1,13 @@
+{
+  "score_name": "cash_exposure_index_v1",
+  "context_only": true,
+  "aml_interpretation": "NONE",
+  "weights": {
+    "cash_usage_rate": 0.35,
+    "cash_transaction_frequency": 0.3,
+    "cash_value_share": 0.2,
+    "cash_preference_rate": 0.15
+  },
+  "missing_policy": "RENORMALIZE_OVER_AVAILABLE_COMPONENTS",
+  "geographic_rule": "NEVER_DOWNSCALE_BELOW_SOURCE_REPRESENTATIVENESS"
+}

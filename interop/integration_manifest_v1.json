@@ -1,0 +1,7 @@
+{
+  "interop_version":"1.0","component_id":"CONTEXT_HUB","repository":"smoralesm07-source/Context-Hub","implementation_stage":"OPERATIONAL_V0_1_CANDIDATE","record_domains":["TERRITORY","SECTOR","MIGRATION_CONTEXT","ECONOMIC_CONTEXT","CASH_CONTEXT","SOURCE"],"context_only":true,"common_risk_score":false,
+  "territory":{"region_key":"CL-REG-{CODIGO_REGION}","province_key":"CL-PROV-{CODIGO_PROVINCIA}","commune_key":"CL-COM-{CODIGO_COMUNA}","canonical_source":"SUBDERE_CUT","name_is_not_key":true},
+  "sector":{"sector_key":"UAF-SEC-{NN}","mapping_statuses":["VALIDATED_EXACT","VALIDATED_RULE","EMPIRICAL_CANDIDATE","AMBIGUOUS","NO_EQUIVALENCE"],"acteco_alone_proves_uaf_status":false,"seed_path":"data/seed/","builder":"scripts/build_seed.py"},
+  "migration":{"sermig_used":false,"aml_interpretation":"NONE"},"cash":{"aml_interpretation":"NONE"},"economic":{"exact_entity_sales_inferred_from_band":false},
+  "consumer_outputs":["data/silver/dim_region.jsonl","data/silver/dim_sector.jsonl","data/silver/sector_sii_mapping_v1.jsonl","data/silver/dim_territory.jsonl","data/gold/migration_context_v1.jsonl","data/gold/economic_peer_context_v1.jsonl","data/gold/cash_context_v1.jsonl"]
+}

@@ -1,0 +1,9 @@
+{
+  "built_at": "2026-08-13",
+  "package_version": "0.1.0",
+  "sector_hub_inputs": [
+    {"name":"maestro_equivalencias_uaf_sii_v0_1.xlsx","sha256":"e8500458914efcf8fccc1c2929379722bb480f4b7c00429010185f1ef469621f","purpose":"governed prior UAF-SII crosswalk","rows_used":74},
+    {"name":"mapa_sectores_ley_19913_chile.xlsx","sha256":"5fbbf38eca20155486eb36e8fb9e315fa791ff9dc7b5672195cff64a68fd1b1b","purpose":"55-sector names and macrofamilies only; prior risk scores not imported","sector_rows_used":55}
+  ],
+  "guardrail":"Source workbooks are not bundled into Context Hub; only governed transformed records and lineage are included."
+}

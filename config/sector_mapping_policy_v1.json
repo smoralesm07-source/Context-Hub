@@ -1,0 +1,18 @@
+{
+  "principle": "SII_ACTIVITY_DOES_NOT_PROVE_UAF_OBLIGED_STATUS",
+  "statuses": [
+    "VALIDATED_EXACT",
+    "VALIDATED_RULE",
+    "EMPIRICAL_CANDIDATE",
+    "AMBIGUOUS",
+    "NO_EQUIVALENCE"
+  ],
+  "initial_crosswalk_conversion": {
+    "DIRECTA": "VALIDATED_RULE",
+    "PARCIAL": "EMPIRICAL_CANDIDATE",
+    "AMPLIA": "AMBIGUOUS",
+    "SIN_ACTECO_DIRECTO": "NO_EQUIVALENCE"
+  },
+  "validated_rule_semantics": "ACTECO match is only one condition; external regulatory/administrative validation remains mandatory.",
+  "legal_membership_assertion_allowed_from_acteco_alone": false
+}
