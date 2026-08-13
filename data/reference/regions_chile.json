@@ -1,0 +1,18 @@
+[
+  {"territory_id":"CL-REG-01","country_code":"CL","territory_level":"REGION","region_code":"01","canonical_name":"Tarapacá","source_name":"Tarapacá","mapping_method":"CODE_EXACT","mapping_confidence":1.0},
+  {"territory_id":"CL-REG-02","country_code":"CL","territory_level":"REGION","region_code":"02","canonical_name":"Antofagasta","source_name":"Antofagasta","mapping_method":"CODE_EXACT","mapping_confidence":1.0},
+  {"territory_id":"CL-REG-03","country_code":"CL","territory_level":"REGION","region_code":"03","canonical_name":"Atacama","source_name":"Atacama","mapping_method":"CODE_EXACT","mapping_confidence":1.0},
+  {"territory_id":"CL-REG-04","country_code":"CL","territory_level":"REGION","region_code":"04","canonical_name":"Coquimbo","source_name":"Coquimbo","mapping_method":"CODE_EXACT","mapping_confidence":1.0},
+  {"territory_id":"CL-REG-05","country_code":"CL","territory_level":"REGION","region_code":"05","canonical_name":"Valparaíso","source_name":"Valparaíso","mapping_method":"CODE_EXACT","mapping_confidence":1.0},
+  {"territory_id":"CL-REG-06","country_code":"CL","territory_level":"REGION","region_code":"06","canonical_name":"Libertador General Bernardo O'Higgins","source_name":"O'Higgins","mapping_method":"CODE_EXACT","mapping_confidence":1.0},
+  {"territory_id":"CL-REG-07","country_code":"CL","territory_level":"REGION","region_code":"07","canonical_name":"Maule","source_name":"Maule","mapping_method":"CODE_EXACT","mapping_confidence":1.0},
+  {"territory_id":"CL-REG-08","country_code":"CL","territory_level":"REGION","region_code":"08","canonical_name":"Biobío","source_name":"Biobío","mapping_method":"CODE_EXACT","mapping_confidence":1.0},
+  {"territory_id":"CL-REG-09","country_code":"CL","territory_level":"REGION","region_code":"09","canonical_name":"La Araucanía","source_name":"La Araucanía","mapping_method":"CODE_EXACT","mapping_confidence":1.0},
+  {"territory_id":"CL-REG-10","country_code":"CL","territory_level":"REGION","region_code":"10","canonical_name":"Los Lagos","source_name":"Los Lagos","mapping_method":"CODE_EXACT","mapping_confidence":1.0},
+  {"territory_id":"CL-REG-11","country_code":"CL","territory_level":"REGION","region_code":"11","canonical_name":"Aysén del General Carlos Ibáñez del Campo","source_name":"Aysén","mapping_method":"CODE_EXACT","mapping_confidence":1.0},
+  {"territory_id":"CL-REG-12","country_code":"CL","territory_level":"REGION","region_code":"12","canonical_name":"Magallanes y de la Antártica Chilena","source_name":"Magallanes","mapping_method":"CODE_EXACT","mapping_confidence":1.0},
+  {"territory_id":"CL-REG-13","country_code":"CL","territory_level":"REGION","region_code":"13","canonical_name":"Metropolitana de Santiago","source_name":"Metropolitana de Santiago","mapping_method":"CODE_EXACT","mapping_confidence":1.0},
+  {"territory_id":"CL-REG-14","country_code":"CL","territory_level":"REGION","region_code":"14","canonical_name":"Los Ríos","source_name":"Los Ríos","mapping_method":"CODE_EXACT","mapping_confidence":1.0},
+  {"territory_id":"CL-REG-15","country_code":"CL","territory_level":"REGION","region_code":"15","canonical_name":"Arica y Parinacota","source_name":"Arica y Parinacota","mapping_method":"CODE_EXACT","mapping_confidence":1.0},
+  {"territory_id":"CL-REG-16","country_code":"CL","territory_level":"REGION","region_code":"16","canonical_name":"Ñuble","source_name":"Ñuble","mapping_method":"CODE_EXACT","mapping_confidence":1.0}
+]

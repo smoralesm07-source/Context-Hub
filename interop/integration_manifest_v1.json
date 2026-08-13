@@ -1,0 +1,48 @@
+{
+  "interop_version": "1.0",
+  "component_id": "CONTEXT_HUB",
+  "repository": "smoralesm07-source/context-hub",
+  "component_type": "CONTEXT_LAYER",
+  "implementation_stage": "V0_1_OPERATIONAL_CORE",
+  "context_is_aml_risk": false,
+  "domains": ["TERRITORY", "SECTOR", "MIGRATION", "ECONOMIC_BENCHMARK", "FINANCIAL_CONTEXT", "CASH_EXPOSURE"],
+  "conformed_dimensions": {
+    "entity": {"key": "ENT-RUT-{RUT_NORMALIZADO}", "role": "CONSUMED_NOT_OWNED"},
+    "territory": {
+      "region_key": "CL-REG-{CODIGO_REGION}",
+      "province_key": "CL-PROV-{CODIGO_PROVINCIA}",
+      "commune_key": "CL-COM-{CODIGO_COMUNA}",
+      "name_is_key": false,
+      "canonical_authority": "SUBDERE_CUT"
+    },
+    "sector": {
+      "mapping_statuses": ["VALIDATED_EXACT", "VALIDATED_RULE", "EMPIRICAL_CANDIDATE", "AMBIGUOUS", "NO_EQUIVALENCE"],
+      "sii_activity_proves_uaf_membership": false
+    },
+    "period": {"preferred_formats": ["YYYY", "YYYY-MM", "YYYY-Qn"]}
+  },
+  "facts": [
+    {"name":"migration_context", "grain":"TERRITORY_X_PERIOD", "aml_interpretation":"NONE"},
+    {"name":"economic_peer_benchmark", "grain":"ENTITY_X_ACTIVITY_X_TERRITORY_X_PERIOD", "aml_interpretation":"NONE"},
+    {"name":"economic_macro_context", "grain":"ACTIVITY_X_TERRITORY_X_PERIOD", "aml_interpretation":"NONE"},
+    {"name":"cash_context", "grain":"SUPPORTED_GEOGRAPHY_OR_SECTOR_X_PERIOD", "aml_interpretation":"NONE"}
+  ],
+  "guardrails": {
+    "missing_is_zero": false,
+    "source_failure_erases_last_good": false,
+    "nationality_as_aml_proxy": false,
+    "cash_exposure_is_aml_score": false,
+    "migration_exposure_is_aml_score": false,
+    "cross_grain_downscaling_allowed": false,
+    "exact_company_sales_inferred_from_sii_band": false
+  },
+  "sources": ["SUBDERE", "INE", "SII", "BANCO_CENTRAL_CHILE", "CMF"],
+  "excluded_sources": ["SERMIG"],
+  "consumer_outputs": [
+    "docs/data/territory_hub_regions_v1.json",
+    "docs/data/context_hub_status_v1.json",
+    "docs/data/source_status_v1.json",
+    "docs/data/source_discovery_v1.json",
+    "docs/data/refresh_summary_v1.json"
+  ]
+}
