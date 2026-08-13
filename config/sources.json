@@ -1,0 +1,108 @@
+{
+  "schema_version": "1.0",
+  "context_only": true,
+  "sources": [
+    {
+      "source_id": "SUBDERE_CUT",
+      "domain": "TERRITORY",
+      "organization": "SUBDERE",
+      "landing_url": "https://www.subdere.gov.cl/documentacion/codigos-unicos-territoriales-actualizados-al-06-de-septiembre-2018",
+      "source_tier": "primary_direct",
+      "expected_update_frequency": "ON_CHANGE",
+      "refresh_policy": "DISCOVER_THEN_FETCH",
+      "failure_policy": "PRESERVE_LAST_KNOWN_GOOD"
+    },
+    {
+      "source_id": "INE_CENSO_2024",
+      "domain": "MIGRATION",
+      "organization": "INE",
+      "landing_url": "https://censo2024.ine.gob.cl/",
+      "source_tier": "primary_direct",
+      "expected_update_frequency": "CENSUS",
+      "refresh_policy": "DISCOVER_THEN_FETCH",
+      "allowed_grain": ["REGION", "COMMUNE"],
+      "aml_interpretation": "NONE"
+    },
+    {
+      "source_id": "INE_MOVIMIENTO_INTERNACIONAL_PASAJEROS",
+      "domain": "MIGRATION",
+      "organization": "INE",
+      "landing_url": "https://www.ine.gob.cl/estadisticas/sociales/demografia-y-vitales/movimiento-internacional-de-pasajeros",
+      "source_tier": "primary_direct",
+      "expected_update_frequency": "ANNUAL",
+      "refresh_policy": "DISCOVER_THEN_FETCH",
+      "administrative_origin": "PDI_CONTROL_MIGRATORIO",
+      "aml_interpretation": "NONE"
+    },
+    {
+      "source_id": "SII_ESTADISTICAS_EMPRESAS",
+      "domain": "ECONOMIC",
+      "organization": "SII",
+      "landing_url": "https://www.sii.cl/sobre_el_sii/estadisticas_de_empresas.html",
+      "source_tier": "primary_direct",
+      "expected_update_frequency": "ANNUAL",
+      "refresh_policy": "DISCOVER_THEN_FETCH",
+      "exact_company_sales_available": false
+    },
+    {
+      "source_id": "SII_PERSONAS_JURIDICAS",
+      "domain": "ECONOMIC",
+      "organization": "SII",
+      "landing_url": "https://www.sii.cl/sobre_el_sii/nominapersonasjuridicas.html",
+      "source_tier": "primary_direct",
+      "expected_update_frequency": "PER_SOURCE",
+      "refresh_policy": "DISCOVER_THEN_FETCH",
+      "exact_company_sales_available": false
+    },
+    {
+      "source_id": "BCCH_PIB_REGIONAL",
+      "domain": "ECONOMIC",
+      "organization": "Banco Central de Chile",
+      "landing_url": "https://www.bcentral.cl/es/web/banco-central/areas/estadisticas/pib-regional",
+      "source_tier": "primary_direct",
+      "expected_update_frequency": "QUARTERLY",
+      "refresh_policy": "DISCOVER_THEN_FETCH"
+    },
+    {
+      "source_id": "CMF_COLOCACIONES_TERRITORIALES",
+      "domain": "FINANCIAL",
+      "organization": "CMF",
+      "landing_url": "https://www.cmfchile.cl/portal/estadisticas/617/w3-propertyvalue-29576.html",
+      "source_tier": "primary_direct",
+      "expected_update_frequency": "MONTHLY",
+      "refresh_policy": "DISCOVER_THEN_FETCH"
+    },
+    {
+      "source_id": "INE_INDICADORES_ECONOMICOS_LABORALES",
+      "domain": "ECONOMIC",
+      "organization": "INE",
+      "landing_url": "https://www.ine.gob.cl/estadisticas",
+      "source_tier": "primary_direct",
+      "expected_update_frequency": "MONTHLY_OR_QUARTERLY",
+      "refresh_policy": "DISCOVER_THEN_FETCH"
+    },
+    {
+      "source_id": "BCCH_ENUPE",
+      "domain": "CASH",
+      "organization": "Banco Central de Chile",
+      "landing_url": "https://www.bcentral.cl/",
+      "source_tier": "primary_direct",
+      "expected_update_frequency": "PER_STUDY",
+      "refresh_policy": "DISCOVER_THEN_FETCH",
+      "aml_interpretation": "NONE"
+    },
+    {
+      "source_id": "BCCH_ECP",
+      "domain": "CASH",
+      "organization": "Banco Central de Chile",
+      "landing_url": "https://www.bcentral.cl/areas/encuestas-economicas/estudio-comportamiento-de-pagos",
+      "source_tier": "primary_direct",
+      "expected_update_frequency": "PER_STUDY",
+      "refresh_policy": "DISCOVER_THEN_FETCH",
+      "aml_interpretation": "NONE"
+    }
+  ],
+  "excluded_sources": [
+    {"source_id": "SERMIG", "reason": "EXCLUDED_BY_SYSTEM_DESIGN"}
+  ]
+}
