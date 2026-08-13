@@ -1,9 +1,9 @@
 {
   "source_id": "SUBDERE_CUT",
-  "status": "UNKNOWN",
-  "last_successful_refresh_at": null,
-  "last_attempt_at": "2026-08-13T21:33:34.822982+00:00",
-  "content_sha256": null,
-  "bytes": 0,
-  "error": "HTTPError: 403 Client Error: Forbidden for url: https://www.subdere.gov.cl/sites/default/files/documentos/CUT_2018_v04.xls"
+  "status": "CURRENT",
+  "last_successful_refresh_at": "2026-08-13T21:34:06.649557+00:00",
+  "last_attempt_at": "2026-08-13T21:34:06.649557+00:00",
+  "content_sha256": "d1b7fc3abb93cea3d115861579297d8bbdc9a7c762c958e646cd01b804df1ea0",
+  "bytes": 69120,
+  "error": null
 }
