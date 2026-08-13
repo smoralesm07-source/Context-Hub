@@ -1,7 +1,9 @@
 {
-  "interop_version":"1.0","component_id":"CONTEXT_HUB","repository":"smoralesm07-source/Context-Hub","implementation_stage":"OPERATIONAL_V0_1","record_domains":["TERRITORY","SECTOR","MIGRATION_CONTEXT","ECONOMIC_CONTEXT","CASH_CONTEXT","SOURCE"],"context_only":true,"common_risk_score":false,
-  "territory":{"region_key":"CL-REG-{CODIGO_REGION}","province_key":"CL-PROV-{CODIGO_PROVINCIA}","commune_key":"CL-COM-{CODIGO_COMUNA}","canonical_source":"SUBDERE_CUT","name_is_not_key":true,"full_commune_materialization":"FIRST_NETWORK_REFRESH"},
+  "interop_version":"1.0","component_id":"CONTEXT_HUB","repository":"smoralesm07-source/Context-Hub","implementation_stage":"OPERATIONAL_V0_2","record_domains":["TERRITORY","SECTOR","MIGRATION_CONTEXT","ECONOMIC_CONTEXT","CASH_CONTEXT","SOURCE"],"context_only":true,"common_risk_score":false,
+  "territory":{"region_key":"CL-REG-{CODIGO_REGION}","province_key":"CL-PROV-{CODIGO_PROVINCIA}","commune_key":"CL-COM-{CODIGO_COMUNA}","canonical_source":"SUBDERE_CUT","name_is_not_key":true,"region_rows_materialized":16,"full_commune_materialization":"PENDING_NETWORK_REFRESH"},
   "sector":{"sector_key":"UAF-SEC-{NN}","mapping_statuses":["VALIDATED_EXACT","VALIDATED_RULE","EMPIRICAL_CANDIDATE","AMBIGUOUS","NO_EQUIVALENCE"],"acteco_alone_proves_uaf_status":false,"seed_path":"data/seed/","builder":"scripts/build_seed.py","seeded_sectors":55,"seeded_mappings":74},
-  "migration":{"sermig_used":false,"aml_interpretation":"NONE"},"cash":{"aml_interpretation":"NONE"},"economic":{"exact_entity_sales_inferred_from_band":false},
-  "consumer_outputs":["data/silver/dim_region.jsonl","data/silver/dim_sector.jsonl","data/silver/sector_sii_mapping_v1.jsonl","data/silver/dim_territory.jsonl","data/gold/migration_context_v1.jsonl","data/gold/economic_peer_context_v1.jsonl","data/gold/cash_context_v1.jsonl"]
+  "migration":{"sermig_used":false,"aml_interpretation":"NONE","materialization":"REAL_PARTIAL_2024","regional_rows":8,"regional_expected":16,"score_calculated":false},
+  "cash":{"aml_interpretation":"NONE","materialization":"REAL_PUBLISHED_AGGREGATES_2025","score_calculated":false},
+  "economic":{"exact_entity_sales_inferred_from_band":false,"materialization":"REAL_SYSTEM_SNAPSHOT_2024","upstream":"RADAR_SII_NATIVE","ultimate_source":"SII"},
+  "consumer_outputs":["data/silver/dim_region.jsonl","data/silver/dim_sector.jsonl","data/silver/sector_sii_mapping_v1.jsonl","data/silver/dim_territory.jsonl","data/gold/migration_context_v1.jsonl","data/gold/economic_peer_context_v1.jsonl","data/gold/cash_context_v1.jsonl","data/gold/migration_observed_v1.json","data/gold/economic_system_snapshot_v1.json","data/gold/cash_observed_v1.json","data/gold/materialization_status_v1.json"]
 }
