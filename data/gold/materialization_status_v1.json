@@ -1,0 +1,13 @@
+{
+  "context_hub_version":"0.2.0",
+  "materialized_at":"2026-08-13",
+  "status":{
+    "territory_region":{"state":"MATERIALIZED","rows":16,"source":"SUBDERE_CUT"},
+    "territory_commune":{"state":"PENDING_NETWORK_REFRESH","rows":0,"expected_rows":346},
+    "sector_hub":{"state":"MATERIALIZED_BY_BUILD","sectors":55,"mappings":74},
+    "migration_observed":{"state":"REAL_PARTIAL","country_rows":1,"regional_rows":8,"expected_regional_rows":16,"source":"INE_CENSO2024_INMIGRACION","score_calculated":false},
+    "economic_system":{"state":"REAL","company_year_rows_2024":994476,"regional_codes":16,"unknown_region_rows":213,"source":"RADAR_SII_NATIVE","ultimate_source":"SII"},
+    "cash_observed":{"state":"REAL_PUBLISHED_AGGREGATES","period":2025,"source":"BCCH_ENUPE_2025","score_calculated":false}
+  },
+  "guardrails":["CONTEXT_IS_NOT_AML_RISK","MISSING_IS_NOT_ZERO","NO_DOWNSCALING","NO_SCORE_WITH_INCOMPLETE_UNIVERSE"]
+}
