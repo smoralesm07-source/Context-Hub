@@ -15,7 +15,20 @@ def _clean_col(value: object) -> str:
 def _digits(value: object, width: int) -> str:
     if pd.isna(value):
         return ""
-    s = re.sub(r"\D", "", str(value))
+    if isinstance(value, (int, float)):
+        try:
+            numeric=float(value)
+            if numeric.is_integer():
+                s=str(int(numeric))
+            else:
+                s=re.sub(r"\D", "", str(value))
+        except Exception:
+            s=re.sub(r"\D", "", str(value))
+    else:
+        text=str(value).strip()
+        if re.fullmatch(r"\d+\.0+", text):
+            text=text.split(".",1)[0]
+        s=re.sub(r"\D", "", text)
     return s.zfill(width) if s else ""
 
 
