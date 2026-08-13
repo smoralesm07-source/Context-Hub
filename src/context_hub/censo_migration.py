@@ -57,8 +57,8 @@ def parse_commune_totals(path: str | Path) -> list[dict]:
         raise ValueError(f"Unexpected Censo sheet 4 columns: {list(df.columns)}")
     out=[]
     for r in df.to_dict("records"):
-        label=str(r.get("pais_o_continente_de_nacimiento") or "").strip().lower()
-        if label != "total nacidos fuera del pais":
+        label=_clean_col(r.get("pais_o_continente_de_nacimiento"))
+        if label != "total_nacidos_fuera_del_pais":
             continue
         reg=_digits(r.get("codigo_region"),2); prov=_digits(r.get("codigo_provincia"),3); com=_digits(r.get("codigo_comuna"),5)
         if not com or com == "00000":
