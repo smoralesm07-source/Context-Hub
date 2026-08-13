@@ -4,8 +4,8 @@
     "download": {
       "source_id": "INE_CENSO2024_INMIGRACION",
       "status": "CURRENT",
-      "last_successful_refresh_at": "2026-08-13T21:34:05.651961+00:00",
-      "last_attempt_at": "2026-08-13T21:34:05.651961+00:00",
+      "last_successful_refresh_at": "2026-08-13T21:35:17.129321+00:00",
+      "last_attempt_at": "2026-08-13T21:35:17.129321+00:00",
       "content_sha256": "8350215eb4fb5379bf408ef32e064c35b584026d8699d7866846cac71683297c",
       "bytes": 291837,
       "error": null
@@ -23,20 +23,39 @@
       ]
     },
     "materialized": {
-      "status": "ERROR",
-      "error": "ValueError: COMMUNE code must have 5 digits: 151010"
+      "status": "READY",
+      "region_rows": 16,
+      "commune_rows": 346,
+      "score_calculated": false
     }
   },
   "territory_refresh": {
     "primary": {
       "source_id": "SUBDERE_CUT",
-      "status": "CURRENT",
+      "status": "UNKNOWN",
       "last_successful_refresh_at": "2026-08-13T21:34:06.649557+00:00",
-      "last_attempt_at": "2026-08-13T21:34:06.649557+00:00",
+      "last_attempt_at": "2026-08-13T21:35:18.496206+00:00",
       "content_sha256": "d1b7fc3abb93cea3d115861579297d8bbdc9a7c762c958e646cd01b804df1ea0",
-      "bytes": 69120,
-      "error": null
+      "bytes": 0,
+      "error": "HTTPError: 403 Client Error: Forbidden for url: https://www.subdere.gov.cl/sites/default/files/documentos/CUT_2018_v04.xls"
     },
+    "attempts": [
+      {
+        "source_id": "IDE_CHILE_DPA_2023",
+        "feature_count": 1,
+        "status": "CURRENT"
+      },
+      {
+        "source_id": "MOP_IDE_DPA_SUBDERE",
+        "feature_count": 345,
+        "status": "CURRENT"
+      },
+      {
+        "source_id": "INE_CENSO2024_INMIGRACION",
+        "status": "AUGMENTED_EXACT_CUT",
+        "added_rows": 1
+      }
+    ],
     "hub": {
       "hub": "TERRITORY_HUB",
       "version": "1.0",
@@ -45,8 +64,8 @@
       "province_rows": 56,
       "status": "READY",
       "canonical_key_source": "SUBDERE_CUT",
-      "materialization_source": "SUBDERE_CUT",
-      "materialization_source_tier": "PRIMARY_OFFICIAL",
+      "materialization_source": "MOP_IDE_DPA_SUBDERE+INE_CENSO2024_INMIGRACION",
+      "materialization_source_tier": "OFFICIAL_SECONDARY",
       "canonical_commune_format": "CL-COM-{CUT_COM}",
       "name_is_key": false,
       "fuzzy_match_promoted_to_truth": false
