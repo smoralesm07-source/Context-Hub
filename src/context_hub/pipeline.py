@@ -7,6 +7,7 @@ from .economic import enrich_peer_context, join_macro_context
 from .cash import cash_exposure, validate_geography, add_cash_trend, sector_cash_exposure
 from .territory import parse_subdere_cut_xls, parse_arcgis_features
 from .sources import download_preserve_last_good, query_arcgis_features
+from .source_profile import profile_excel
 
 ROOT=Path(__file__).resolve().parents[2]
 def _load_json(path:Path): return json.loads(path.read_text(encoding="utf-8"))
@@ -75,9 +76,32 @@ def refresh_territory(sources:list[dict])->dict:
     except Exception as exc:
         return {"primary":primary_status,"fallback":{"status":"UNKNOWN","error":f"{type(exc).__name__}: {exc}"}}
 
+def refresh_migration_profile(sources:list[dict])->dict:
+    source=next(x for x in sources if x["source_id"]=="INE_CENSO2024_INMIGRACION")
+    target=ROOT/"data/bronze/D4_Inmigracion-Internacional.xlsx"
+    status_path=ROOT/"data/gold/source_status_INE_CENSO2024_INMIGRACION.json"
+    status=download_preserve_last_good(source,target,status_path)
+    result={"download":status}
+    if target.exists():
+        try:
+            profile=profile_excel(target)
+            profile.update({
+                "source_id":"INE_CENSO2024_INMIGRACION",
+                "source_owner":"INE",
+                "context_only":True,
+                "aml_interpretation":"NONE",
+            })
+            write_json(ROOT/"data/gold/source_profile_INE_CENSO2024_INMIGRACION.json",profile)
+            result["profile"]={"status":"READY","sheet_count":profile["sheet_count"],"sheet_names":profile["sheet_names"]}
+        except Exception as exc:
+            result["profile"]={"status":"ERROR","error":f"{type(exc).__name__}: {exc}"}
+    return result
+
 def run(network:bool=False)->dict:
     sources=_load_json(ROOT/"config/sources.json"); result={"network":network}
-    if network: result["territory_refresh"]=refresh_territory(sources)
+    if network:
+        result["territory_refresh"]=refresh_territory(sources)
+        result["migration_source_profile"]=refresh_migration_profile(sources)
     result.update(materialize_staging())
     write_json(ROOT/"data/gold/last_run.json",result); return result
 

@@ -3,6 +3,14 @@ on:
   workflow_dispatch:
   schedule:
     - cron: "17 12 * * 1"
+  push:
+    branches: [main]
+    paths:
+      - "src/context_hub/**"
+      - "scripts/**"
+      - "config/**"
+      - "data/seed/**"
+      - ".github/workflows/refresh.yml"
 permissions:
   contents: write
 jobs:
