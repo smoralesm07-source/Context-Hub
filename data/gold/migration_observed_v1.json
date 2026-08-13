@@ -1,0 +1,39 @@
+{
+  "record_type": "MIGRATION_OBSERVED_SNAPSHOT",
+  "period": 2024,
+  "source_id": "INE_CENSO2024_INMIGRACION",
+  "source_owner": "INE",
+  "source_tier": "PRIMARY_OFFICIAL",
+  "published_at": "2025-04-30",
+  "coverage_status": "PARTIAL_REGIONAL_MATERIALIZATION",
+  "country": {
+    "territory_id": "CL",
+    "foreign_born_count": 1608650,
+    "foreign_resident_share_pct": 8.8,
+    "foreign_resident_share_2017_pct": 4.4,
+    "share_change_pp_2017_2024": 4.4
+  },
+  "regions": [
+    {"territory_id":"CL-REG-01","region_code":"01","region_name":"Tarapacá","foreign_resident_share_pct":23.2},
+    {"territory_id":"CL-REG-02","region_code":"02","region_name":"Antofagasta","foreign_resident_share_pct":19.7},
+    {"territory_id":"CL-REG-15","region_code":"15","region_name":"Arica y Parinacota","foreign_resident_share_pct":14.9},
+    {"territory_id":"CL-REG-05","region_code":"05","region_name":"Valparaíso","foreign_born_count":100655,"foreign_resident_share_pct":5.3,"foreign_resident_share_2017_pct":2.3},
+    {"territory_id":"CL-REG-07","region_code":"07","region_name":"Maule","foreign_born_count":42349,"foreign_resident_share_pct":3.8,"foreign_resident_share_2017_pct":1.1},
+    {"territory_id":"CL-REG-09","region_code":"09","region_name":"La Araucanía","foreign_resident_share_pct":2.1},
+    {"territory_id":"CL-REG-14","region_code":"14","region_name":"Los Ríos","foreign_resident_share_pct":1.9},
+    {"territory_id":"CL-REG-16","region_code":"16","region_name":"Ñuble","foreign_resident_share_pct":2.1}
+  ],
+  "regional_rows_materialized": 8,
+  "regional_rows_expected": 16,
+  "source_url": "https://censo2024.ine.gob.cl/wp-content/uploads/2025/04/D4_Inmigracion-Internacional.xlsx",
+  "evidence_urls": [
+    "https://censo2024.ine.gob.cl/censo-2024-el-566-de-las-mujeres-entre-15-y-49-anos-tienen-hijos-as-mantiene-la-tendencia-a-la-baja/",
+    "https://regiones.ine.gob.cl/valparaiso/prensa/segunda-entrega-de-resultados-censales-fecundidad-migraci%C3%B3n-interna-e-internacional.-regi%C3%B3n-de-valpara%C3%ADso",
+    "https://regiones.ine.gob.cl/maule/sistema-estadistico-regional/segunda-entrega-de-resultados-censales-fecundidad-poblaci%C3%B3n-migraci%C3%B3n-interna-e-internacional"
+  ],
+  "context_only": true,
+  "aml_interpretation": "NONE",
+  "nationality_as_aml_proxy": false,
+  "note": "La cobertura regional parcial se publica como observación; no se calculan percentiles ni score migratorio hasta completar el universo regional/comunal.",
+  "schema_version": "1.0"
+}

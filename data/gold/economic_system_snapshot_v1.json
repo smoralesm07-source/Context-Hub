@@ -1,0 +1,49 @@
+{
+  "record_type": "ECONOMIC_SYSTEM_SNAPSHOT",
+  "period": 2024,
+  "source_id": "RADAR_SII_NATIVE",
+  "ultimate_source_owner": "SII",
+  "upstream_repository": "smoralesm07-source/Radar_SII",
+  "upstream_path": "docs/data/dashboard.json",
+  "upstream_snapshot_validated": true,
+  "company_year_rows_2024": 994476,
+  "kpis": {
+    "entities": 3373630,
+    "active_as_published": 2395471,
+    "terminated_as_published": 978159,
+    "earliest_company_year": 2020,
+    "latest_company_year": 2024,
+    "signals": 704636,
+    "ownership_edges": 1976441
+  },
+  "history_entities": {
+    "2020": 710909,
+    "2021": 824213,
+    "2022": 892391,
+    "2023": 925434,
+    "2024": 994476
+  },
+  "regions_2024_by_cut": {
+    "13": 504860,
+    "05": 95329,
+    "08": 66394,
+    "07": 49478,
+    "10": 46575,
+    "06": 44351,
+    "09": 42325,
+    "04": 32001,
+    "02": 26633,
+    "16": 18611,
+    "14": 18035,
+    "01": 15501,
+    "03": 10129,
+    "12": 10042,
+    "15": 7282,
+    "11": 6717
+  },
+  "region_unknown_2024": 213,
+  "context_only": true,
+  "aml_interpretation": "NONE",
+  "sales_measure_note": "No se infieren ventas exactas de una empresa desde tramos SII.",
+  "schema_version": "1.0"
+}

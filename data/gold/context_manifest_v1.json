@@ -1,5 +1,14 @@
 {
-  "context_hub_version":"0.1.0","interop_version":"1.0",
-  "components":{"territory_hub":"READY_REGION_SEED_FULL_CUT_ON_NETWORK_RUN","sector_hub":"READY_SEEDED_55_SECTORS_74_MAPPINGS","migration":"ENGINE_READY_NO_SERMIG","economic_benchmark":"ENGINE_READY","cash_exposure":"ENGINE_READY"},
-  "guardrails":["CONTEXT_IS_NOT_AML_RISK","NATIONALITY_IS_NOT_AN_AML_PROXY","ACTECO_ALONE_DOES_NOT_PROVE_UAF_OBLIGED_STATUS","MISSING_SOURCE_IS_NOT_ZERO","NO_DOWNSCALING_BELOW_SOURCE_REPRESENTATIVENESS","NO_EXACT_ENTITY_SALES_INFERENCE_FROM_OPEN_SII_WHEN_ONLY_BAND_IS_AVAILABLE"]
+  "context_hub_version":"0.2.0",
+  "interop_version":"1.0",
+  "components":{
+    "territory_hub":"READY_REGION_SEED_FULL_CUT_ON_NETWORK_RUN",
+    "sector_hub":"READY_55_SECTORS_74_MAPPINGS",
+    "migration":"REAL_PARTIAL_2024",
+    "economic_benchmark":"REAL_SYSTEM_SNAPSHOT_2024",
+    "cash_exposure":"REAL_PUBLISHED_AGGREGATES_2025"
+  },
+  "materialized_outputs":["data/gold/migration_observed_v1.json","data/gold/economic_system_snapshot_v1.json","data/gold/cash_observed_v1.json","data/gold/materialization_status_v1.json"],
+  "context_only":true,
+  "common_risk_score":false
 }

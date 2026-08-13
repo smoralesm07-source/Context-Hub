@@ -1,0 +1,14 @@
+{
+  "record_type":"CASH_OBSERVED_SNAPSHOT",
+  "period":2025,
+  "source_id":"BCCH_ENUPE_2025",
+  "published_at":"2026-05-08",
+  "national":{"cash_usage_rate_pct":64,"debit_usage_rate_pct":81,"cash_main_payment_fairs_pct":76,"p2p_cash_preference_pct":35,"intend_to_continue_using_cash_pct":71},
+  "rm":{"territory_id":"CL-REG-13","daily_cash_use_pct":59},
+  "regions_excluding_rm":{"daily_cash_use_pct":72,"canonical_territory_id":null},
+  "source_tier":"PRIMARY_OFFICIAL",
+  "context_only":true,
+  "aml_interpretation":"NONE",
+  "score_status":"NOT_CALCULATED",
+  "schema_version":"1.0"
+}
