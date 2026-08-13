@@ -1,0 +1,3 @@
+{
+  "hub":"TERRITORY_HUB","version":"1.0","region_seed_rows":16,"commune_dimension_status":"PENDING_FIRST_NETWORK_REFRESH","canonical_region_format":"CL-REG-{CUT_REG}","canonical_commune_format":"CL-COM-{CUT_COM}","canonical_source":"SUBDERE_CUT","fallback_source":"IDE_CHILE_DPA_2023","name_is_key":false,"fuzzy_match_promoted_to_truth":false
+}

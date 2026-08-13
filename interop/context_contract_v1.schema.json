@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "context_contract_v1.schema.json",
+  "title": "Context Hub v1 common contextual record",
+  "type": "object",
+  "required": ["context_only"],
+  "properties": {
+    "context_only": {"const": true},
+    "entity_id": {"type": ["string", "null"]},
+    "territory_id": {"type": ["string", "null"]},
+    "sector_id": {"type": ["string", "null"]},
+    "period": {"type": ["string", "integer", "null"]},
+    "source_ids": {"type": "array", "items": {"type": "string"}},
+    "aml_interpretation": {"enum": ["NONE", null]},
+    "score_coverage": {"type": ["number", "null"], "minimum": 0, "maximum": 1}
+  },
+  "additionalProperties": true
+}

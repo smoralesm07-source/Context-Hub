@@ -1,0 +1,26 @@
+mapping_id,uaf_sector_id,sii_activity_code,sii_activity_name,original_equivalence_type,original_use,required_external_source,method_note
+UAF-SII-001,1,663091,ADMINISTRADORAS DE FONDOS DE INVERSIÓN,DIRECTA,MATCH_FUERTE,CMF/UAF,La glosa SII coincide de forma específica con la categoría UAF.
+UAF-SII-002,2,663010,ADMINISTRADORAS DE FONDOS DE PENSIONES (AFP),DIRECTA,MATCH_FUERTE,Superintendencia de Pensiones/UAF,La glosa SII identifica expresamente a las AFP.
+UAF-SII-003,3,663092,ADMINISTRADORAS DE FONDOS MUTUOS,DIRECTA,MATCH_FUERTE,CMF/UAF,La glosa SII coincide de forma específica con la categoría UAF.
+UAF-SII-004,4,649209,OTRAS ACTIVIDADES DE CONCESIÓN DE CRÉDITO N.C.P.,AMPLIA,SOLO_PRESELECCION,CMF/UAF,No existe en el clasificador revisado una glosa específica para administradoras de mutuos hipotecarios; este código es solo un candidato amplio.
+UAF-SII-005,5,663099,ADMINISTRADORAS DE FONDOS PARA OTROS FINES N.C.P.,PARCIAL,CANDIDATO,CMF/UAF,Es la glosa más cercana para administradoras de fondos no cubiertas por códigos específicos; confirmar calidad de AGF en CMF.
+UAF-SII-006,6,522910,AGENCIAS DE ADUANAS,DIRECTA,MATCH_FUERTE,Servicio Nacional de Aduanas/UAF,La glosa SII identifica expresamente agencias de aduanas.
+UAF-SII-007,7,661203,AGENTES DE VALORES,DIRECTA,MATCH_FUERTE,CMF/UAF,La glosa SII identifica expresamente agentes de valores.
+UAF-SII-008,8,252000,FABRICACIÓN DE ARMAS Y MUNICIONES,DIRECTA,MATCH_FUERTE,DGMN/UAF,La glosa SII identifica fabricación de armas y municiones; confirmar autorización/condición regulatoria.
+UAF-SII-009,9,477392,VENTA AL POR MENOR DE ARMAS Y MUNICIONES EN COMERCIOS ESPECIALIZADOS,DIRECTA,MATCH_FUERTE,DGMN/UAF,La glosa SII identifica venta minorista de armas y municiones.
+UAF-SII-010,10,641910,ACTIVIDADES BANCARIAS,DIRECTA,MATCH_FUERTE,CMF/UAF,La glosa SII identifica actividades bancarias.
+UAF-SII-011,11,661100,ADMINISTRACIÓN DE MERCADOS FINANCIEROS,PARCIAL,CANDIDATO,CMF/UAF,"Administración de mercados financieros incluye bolsas, pero no distingue bolsa de productos."
+UAF-SII-012,12,661100,ADMINISTRACIÓN DE MERCADOS FINANCIEROS,PARCIAL,MATCH_FUERTE,CMF/UAF,"Administración de mercados financieros es una equivalencia fuerte, aunque la glosa no dice literalmente bolsa de valores."
+UAF-SII-013,13,649203,CAJAS DE COMPENSACIÓN,DIRECTA,MATCH_FUERTE,SUSESO/UAF,La glosa SII identifica expresamente cajas de compensación.
+UAF-SII-014,14,661204,ACTIVIDADES DE CASAS DE CAMBIO Y OPERADORES DE DIVISA,DIRECTA,MATCH_FUERTE,BCCh/UAF,La glosa SII identifica casas de cambio y operadores de divisa.
+UAF-SII-015,15,461009,OTROS TIPOS DE CORRETAJES O REMATES AL POR MAYOR N.C.P.,PARCIAL,CANDIDATO,UAF/registro comercial,La glosa comprende remates/corretajes al por mayor; puede no cubrir todas las casas de remate y martillo.
+UAF-SII-016,16,920010,ACTIVIDADES DE CASINOS DE JUEGOS,DIRECTA,MATCH_FUERTE,Superintendencia de Casinos de Juego/UAF,La glosa SII identifica casinos de juego.
+UAF-SII-017,17,920010,ACTIVIDADES DE CASINOS DE JUEGOS,PARCIAL,CANDIDATO,Superintendencia de Casinos de Juego/UAF,El ACTECO no distingue la modalidad flotante.
+UAF-SII-018,18,931209,ACTIVIDADES DE OTROS CLUBES DEPORTIVOS N.C.P.,AMPLIA,SOLO_PRESELECCION,DGMN/UAF,Código genérico de otros clubes deportivos; no permite identificar específicamente clubes de caza.
+UAF-SII-019,19,931209,ACTIVIDADES DE OTROS CLUBES DEPORTIVOS N.C.P.,AMPLIA,SOLO_PRESELECCION,Autoridad sectorial/UAF,Código genérico de otros clubes deportivos; no permite identificar específicamente clubes de pesca.
+UAF-SII-020,20,931209,ACTIVIDADES DE OTROS CLUBES DEPORTIVOS N.C.P.,AMPLIA,SOLO_PRESELECCION,DGMN/UAF,Código genérico de otros clubes deportivos; no permite identificar específicamente clubes de tiro.
+UAF-SII-021,21,477394,"VENTA AL POR MENOR DE ARTÍCULOS DE JOYERÍA, BISUTERÍA Y RELOJERÍA EN COMERCIOS ESPECIALIZADOS",PARCIAL,MATCH_FUERTE,UAF/registro comercial,"Código fuertemente compatible, pero también incluye bisutería y relojería."
+UAF-SII-022,21,464909,VENTA AL POR MAYOR DE OTROS ENSERES DOMÉSTICOS N.C.P.,AMPLIA,SOLO_PRESELECCION,UAF/registro comercial,"Puede capturar comercio mayorista relacionado, pero la glosa es muy amplia; usar solo como señal auxiliar."
+UAF-SII-023,22,466200,VENTA AL POR MAYOR DE METALES Y MINERALES METALÍFEROS,AMPLIA,CANDIDATO,UAF/registro comercial,"Incluye metales y minerales metalíferos en general, no exclusivamente metales preciosos."
+UAF-SII-024,23,651100,SEGUROS DE VIDA,DIRECTA,MATCH_FUERTE,CMF/UAF,Compañías de seguros de vida.
+UAF-SII-025,23,651210,"SEGUROS GENERALES, EXCEPTO ACTIVIDADES DE ISAPRES",DIRECTA,MATCH_FUERTE,CMF/UAF,Compañías de seguros generales.

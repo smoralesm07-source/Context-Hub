@@ -1,0 +1,25 @@
+mapping_id,uaf_sector_id,sii_activity_code,sii_activity_name,original_equivalence_type,original_use,required_external_source,method_note
+UAF-SII-051,41,661909,OTRAS ACTIVIDADES AUXILIARES DE LAS ACTIVIDADES DE SERVICIOS FINANCIEROS N.C.P.,AMPLIA,SOLO_PRESELECCION,CMF/UAF,Código auxiliar amplio; requiere identificación en registro CMF.
+UAF-SII-052,42,,,SIN_ACTECO_DIRECTO,REQUIERE_REGISTRO_EXTERNO,CMF/UAF,"La categoría se define por fiscalización CMF, no por una actividad económica SII única."
+UAF-SII-053,43,931101,HIPÓDROMOS,DIRECTA,MATCH_FUERTE,UAF/autoridad hípica,La glosa SII identifica expresamente hipódromos.
+UAF-SII-054,44,641990,OTROS TIPOS DE INTERMEDIACIÓN MONETARIA N.C.P.,AMPLIA,CANDIDATO,CMF/UAF,Intermediación monetaria n.c.p. puede identificar instituciones financieras distintas de bancos.
+UAF-SII-055,44,649201,FINANCIERAS,AMPLIA,CANDIDATO,CMF/UAF,"Financieras es compatible, pero la categoría UAF de institución financiera puede ser más amplia."
+UAF-SII-056,44,649202,ACTIVIDADES DE CRÉDITO PRENDARIO,AMPLIA,CANDIDATO,CMF/UAF,Crédito prendario corresponde a una actividad financiera específica; validar alcance jurídico UAF.
+UAF-SII-057,44,649209,OTRAS ACTIVIDADES DE CONCESIÓN DE CRÉDITO N.C.P.,AMPLIA,CANDIDATO,CMF/UAF,"Otras actividades de concesión de crédito es una preselección, no una equivalencia jurídica."
+UAF-SII-058,44,649900,"OTRAS ACTIVIDADES DE SERVICIOS FINANCIEROS, EXCEPTO SEGUROS Y FONDOS DE PENSIONES N.C.P.",AMPLIA,SOLO_PRESELECCION,CMF/UAF,Servicios financieros n.c.p. es demasiado amplio para inferir por sí solo la categoría UAF.
+UAF-SII-059,45,691002,SERVICIO NOTARIAL,DIRECTA,MATCH_FUERTE,Poder Judicial/UAF,La glosa SII identifica expresamente servicio notarial.
+UAF-SII-060,46,661100,ADMINISTRACIÓN DE MERCADOS FINANCIEROS,PARCIAL,MATCH_FUERTE,CMF/UAF,Administración de mercados financieros es fuertemente compatible con operadores de mercados de futuros/opciones.
+UAF-SII-061,46,661209,OTROS SERVICIOS DE CORRETAJE DE VALORES Y COMMODITIES N.C.P.,PARCIAL,CANDIDATO,CMF/UAF,"Corretaje de valores y commodities puede captar intermediarios relacionados, no necesariamente al operador del mercado."
+UAF-SII-062,47,931201,ACTIVIDADES DE CLUBES DE FÚTBOL AMATEUR Y PROFESIONAL,PARCIAL,MATCH_FUERTE,Registro de Organizaciones Deportivas Profesionales/UAF,Identifica clubes de fútbol amateur y profesional; requiere distinguir organizaciones profesionales regidas por Ley 20.019.
+UAF-SII-063,47,931209,ACTIVIDADES DE OTROS CLUBES DEPORTIVOS N.C.P.,AMPLIA,CANDIDATO,Registro de Organizaciones Deportivas Profesionales/UAF,"Puede captar clubes profesionales de otros deportes, pero también clubes no profesionales."
+UAF-SII-064,47,931901,PROMOCIÓN Y ORGANIZACIÓN DE COMPETENCIAS DEPORTIVAS,AMPLIA,SOLO_PRESELECCION,Registro de Organizaciones Deportivas Profesionales/UAF,"Organización de competencias es una señal auxiliar, no equivalente a organización deportiva profesional."
+UAF-SII-065,48,661204,ACTIVIDADES DE CASAS DE CAMBIO Y OPERADORES DE DIVISA,PARCIAL,CANDIDATO,BCCh/UAF,"Operadores de divisa son compatibles, pero la categoría depende de la facultad formal para recibir moneda extranjera."
+UAF-SII-066,49,462020,VENTA AL POR MAYOR DE ANIMALES VIVOS,AMPLIA,CANDIDATO,Registro genealógico/autoridad sectorial/UAF,"Venta al por mayor de animales vivos puede incluir equinos, pero no distingue raza pura."
+UAF-SII-067,50,641990,OTROS TIPOS DE INTERMEDIACIÓN MONETARIA N.C.P.,AMPLIA,SOLO_PRESELECCION,CMF/UAF,Una representación de banco extranjero no equivale necesariamente a intermediación monetaria; confirmar exclusivamente en registro CMF.
+UAF-SII-068,51,,,SIN_ACTECO_DIRECTO,REQUIERE_REGISTRO_EXTERNO,Administración de Zona Franca/UAF,La calidad de sociedad administradora de zona franca es jurídica/administrativa y no está identificada por un ACTECO único.
+UAF-SII-069,52,,,SIN_ACTECO_DIRECTO,REQUIERE_REGISTRO_EXTERNO,Aduanas/administración de Zona Franca/UAF,Ser usuario de zona franca es una condición registral; prácticamente cualquier ACTECO compatible con la operación podría aparecer.
+UAF-SII-070,53,451001,VENTA AL POR MAYOR DE VEHÍCULOS AUTOMOTORES,DIRECTA,MATCH_FUERTE,UAF/registro comercial,Venta mayorista de vehículos es compatible con automotoras.
+UAF-SII-071,53,451002,VENTA AL POR MENOR DE VEHÍCULOS AUTOMOTORES NUEVOS O USADOS (INCLUYE COMPRAVENTA),DIRECTA,MATCH_FUERTE,UAF/registro comercial,Venta minorista de vehículos nuevos o usados es compatible con automotoras.
+UAF-SII-072,54,451001,VENTA AL POR MAYOR DE VEHÍCULOS AUTOMOTORES,DIRECTA,MATCH_FUERTE,UAF/registro comercial,Venta mayorista de vehículos automotores.
+UAF-SII-073,54,451002,VENTA AL POR MENOR DE VEHÍCULOS AUTOMOTORES NUEVOS O USADOS (INCLUYE COMPRAVENTA),DIRECTA,MATCH_FUERTE,UAF/registro comercial,Venta minorista de vehículos nuevos o usados.
+UAF-SII-074,55,771000,ALQUILER DE VEHÍCULOS AUTOMOTORES SIN CHOFER,DIRECTA,MATCH_FUERTE,UAF/registro comercial,La glosa SII identifica expresamente alquiler de vehículos automotores sin chofer.

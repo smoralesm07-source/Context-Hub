@@ -1,0 +1,14 @@
+{
+  "score_name": "migration_exposure_index_v1",
+  "context_only": true,
+  "aml_interpretation": "NONE",
+  "weights": {
+    "foreign_resident_share_percentile": 0.5,
+    "international_passenger_intensity_percentile": 0.35,
+    "migration_change_percentile": 0.15
+  },
+  "missing_policy": "RENORMALIZE_OVER_AVAILABLE_COMPONENTS",
+  "minimum_coverage_for_label": 0.5,
+  "nationality_as_aml_proxy": false,
+  "territorial_downscaling_without_source_support": false
+}

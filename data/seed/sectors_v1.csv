@@ -1,0 +1,56 @@
+uaf_sector_id,uaf_activity_name,macrofamily
+1,Administradoras de Fondos de Inversión,"Gestión de activos, seguros y mercados"
+2,Administradoras de Fondos de Pensiones,"Gestión de activos, seguros y mercados"
+3,Administradoras de Fondos Mutuos,"Gestión de activos, seguros y mercados"
+4,Administradoras de Mutuos Hipotecarios,"Banca, crédito y medios de pago"
+5,Administradoras Generales de Fondos,"Gestión de activos, seguros y mercados"
+6,Agentes de Aduana,Comercio exterior y zonas francas
+7,Agentes de Valores,"Gestión de activos, seguros y mercados"
+8,Armas: Personas que se Dediquen a la Fabricación de Armas,Armas y clubes
+9,Armas: Personas que se Dediquen a la Venta de Armas,Armas y clubes
+10,Bancos,"Banca, crédito y medios de pago"
+11,Bolsas de Productos,"Gestión de activos, seguros y mercados"
+12,Bolsas de Valores,"Gestión de activos, seguros y mercados"
+13,Cajas de Compensación,"Banca, crédito y medios de pago"
+14,Casas de Cambio,"Cambio, remesas y transporte de valores"
+15,Casas de Remate y Martillo,Bienes de alto valor y remates
+16,Casinos de Juego,"Juegos, hípica y deporte profesional"
+17,Casinos Flotantes de Juego,"Juegos, hípica y deporte profesional"
+18,Clubes de Caza,Armas y clubes
+19,Clubes de Pesca,Armas y clubes
+20,Clubes de Tiro,Armas y clubes
+21,Comerciantes de Joyas y Piedras Preciosas,Bienes de alto valor y remates
+22,Comerciantes de Metales Preciosos,Bienes de alto valor y remates
+23,Compañías de Seguros,"Gestión de activos, seguros y mercados"
+24,Conservadores,Inmobiliario y ministros de fe
+25,Cooperativas de Ahorro y Crédito,"Banca, crédito y medios de pago"
+26,Corredores de Bolsas de Productos,"Gestión de activos, seguros y mercados"
+27,Corredores de Bolsas de Valores,"Gestión de activos, seguros y mercados"
+28,Corredores de Propiedades,Inmobiliario y ministros de fe
+29,"Emisoras u Operadoras de Tarjetas de Crédito, Tarjetas de Pago con provisión de fondos, o cualquier otro sistema similar a los referidos medios de pago","Banca, crédito y medios de pago"
+30,Empresas de Arrendamiento Financiero (Leasing),"Banca, crédito y medios de pago"
+31,Empresas de Depósitos de Valores regidas por la Ley N° 18.876,"Gestión de activos, seguros y mercados"
+32,Empresas de Factoraje (Factoring),"Banca, crédito y medios de pago"
+33,Empresas de Securitización,"Gestión de activos, seguros y mercados"
+34,Empresas de Transferencia de Dinero,"Cambio, remesas y transporte de valores"
+35,Empresas de Transporte de Valores,"Cambio, remesas y transporte de valores"
+36,Empresas Dedicadas a la Gestión Inmobiliaria,Inmobiliario y ministros de fe
+37,Fintec: Prestadores del servicio de Custodia de Instrumentos Financieros,Fintec y finanzas digitales
+38,Fintec: Prestadores del servicio de Intermediación de Instrumentos Financieros,Fintec y finanzas digitales
+39,Fintec: Prestadores del servicio de Plataforma de Financiamiento Colectivo,Fintec y finanzas digitales
+40,Fintec: Prestadores del servicio de Sistemas Alternativos de Transacción,Fintec y finanzas digitales
+41,Fintec: Proveedores del servicio de Iniciación de Pagos,Fintec y finanzas digitales
+42,Fintec: Otros fiscalizados por la Comisión para el Mercado Financiero (CMF),Fintec y finanzas digitales
+43,Hipódromos,"Juegos, hípica y deporte profesional"
+44,Instituciones Financieras,"Banca, crédito y medios de pago"
+45,Notarios,Inmobiliario y ministros de fe
+46,Operadores de Mercados de Futuro y de Opciones,"Gestión de activos, seguros y mercados"
+47,Organizaciones Deportivas Profesionales regidas por la Ley N° 20.019,"Juegos, hípica y deporte profesional"
+48,Otras Entidades Facultadas para Recibir Moneda Extranjera,"Cambio, remesas y transporte de valores"
+49,Personas que se Dediquen a la Compraventa de Equinos de Raza Pura,Bienes de alto valor y remates
+50,Representaciones de Bancos Extranjeros,"Banca, crédito y medios de pago"
+51,Sociedades Administradoras de Zonas Francas,Comercio exterior y zonas francas
+52,Usuarios de Zonas Francas,Comercio exterior y zonas francas
+53,Vehículos: Automotoras,Vehículos
+54,Vehículos: Comercializadoras de Vehículos Nuevos o Usados,Vehículos
+55,Vehículos: Empresas de Arriendo de Vehículos,Vehículos
