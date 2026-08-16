@@ -13,6 +13,76 @@ def write_jsonl(path:Path,rows:list[dict])->None:
             f.write(json.dumps(row,ensure_ascii=False,sort_keys=True)+"\n")
     tmp.replace(path)
 
+def read_jsonl(path:Path)->list[dict]:
+    if not path.exists(): return []
+    return [json.loads(l) for l in path.read_text(encoding="utf-8").splitlines() if l.strip()]
+
+def build_territory_aliases()->dict:
+    """Materializa los alias territoriales gobernados desde el seed.
+
+    Valida contra las dimensiones canónicas: un alias que apunte a un
+    territory_id inexistente, o que choque con otro dentro de su mismo nivel,
+    aborta la construcción en vez de publicarse.
+    """
+    import sys
+    sys.path.insert(0,str(ROOT/"src"))
+    from context_hub.territory_resolve import match_key
+
+    seed=ROOT/"data/seed/territory_aliases_v1.csv"
+    if not seed.exists(): return {"alias_rows":0,"status":"NO_SEED"}
+
+    known={r["territory_id"] for r in read_jsonl(ROOT/"data/silver/dim_region.jsonl")}
+    known|={r["territory_id"] for r in read_jsonl(ROOT/"data/silver/dim_territory.jsonl")}
+    canonical={
+        "REGION":{match_key(r["canonical_name"]) for r in read_jsonl(ROOT/"data/silver/dim_region.jsonl")},
+        "COMMUNE":{match_key(r["canonical_name"]) for r in read_jsonl(ROOT/"data/silver/dim_territory.jsonl")},
+    }
+
+    rows=[];seen={}
+    with seed.open(encoding="utf-8",newline="") as f:
+        for r in csv.DictReader(f):
+            alias=r["alias"].strip();tid=r["territory_id"].strip();level=r["territory_level"].strip()
+            if tid not in known:
+                raise ValueError(f"Alias '{alias}' apunta a territory_id inexistente: {tid}")
+            key=match_key(alias)
+            if not key:
+                raise ValueError(f"Alias '{alias}' produce clave vacía")
+            prev=seen.get((level,key))
+            if prev and prev!=tid:
+                raise ValueError(f"Alias '{alias}' ({level}) choca: {prev} vs {tid}")
+            seen[(level,key)]=tid
+            rows.append({
+                "alias":alias,"alias_type":r["alias_type"].strip(),"match_key":key,
+                "note":r.get("note","").strip() or None,"schema_version":"1.0",
+                "shadows_canonical_name":key in canonical.get(level,set()),
+                "source_basis":"GOVERNED_SEED","status":"ACTIVE",
+                "territory_id":tid,"territory_level":level,
+            })
+    rows.sort(key=lambda x:(x["territory_level"],x["alias"]))
+    write_jsonl(ROOT/"data/silver/territory_aliases.jsonl",rows)
+
+    # El conteo de ambigüedad entre niveles se toma del resolver ya construido,
+    # que incluye los alias: contar sólo los nombres canónicos lo subestima.
+    from context_hub.territory_resolve import export_index, load_resolver
+    resolver=load_resolver(ROOT)
+
+    # Artefacto de interoperabilidad: los radares lo consumen sin importar este paquete.
+    index=export_index(resolver)
+    (ROOT/"data/gold").mkdir(parents=True,exist_ok=True)
+    (ROOT/"data/gold/territory_resolution_index_v1.json").write_text(
+        json.dumps(index,ensure_ascii=False,indent=2,sort_keys=True)+"\n",encoding="utf-8")
+
+    return {
+        "resolution_index_keys":{k:len(v) for k,v in index["index"].items()},
+        "alias_rows":len(rows),
+        "by_type":dict(Counter(x["alias_type"] for x in rows)),
+        "cross_level_ambiguous_keys":sorted(resolver.cross_level_keys()),
+        "within_level_collisions":{k:sorted(v) for k,v in resolver.collisions().items() if v},
+        "fuzzy_match_promoted_to_truth":False,
+        "resolution_policy":"EXACT_MATCH_ON_NORMALIZED_KEY_ONLY",
+        "status":"READY",
+    }
+
 def build()->dict:
     seed=ROOT/"data/seed"
     sectors=[]
@@ -77,6 +147,11 @@ def build()->dict:
     }
     (ROOT/"data/gold").mkdir(parents=True,exist_ok=True)
     (ROOT/"data/gold/sector_hub_status.json").write_text(json.dumps(status,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
+
+    alias_status=build_territory_aliases()
+    (ROOT/"data/gold/territory_alias_status.json").write_text(
+        json.dumps(alias_status,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
+    status["territory_aliases"]=alias_status
     return status
 
 if __name__=="__main__":

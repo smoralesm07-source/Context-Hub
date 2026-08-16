@@ -1,0 +1,36 @@
+alias,territory_id,territory_level,alias_type,note
+I,CL-REG-01,REGION,GOVERNED_ROMAN,Numeral romano usado por DIPRES y CGR
+II,CL-REG-02,REGION,GOVERNED_ROMAN,Numeral romano usado por DIPRES y CGR
+III,CL-REG-03,REGION,GOVERNED_ROMAN,Numeral romano usado por DIPRES y CGR
+IV,CL-REG-04,REGION,GOVERNED_ROMAN,Numeral romano usado por DIPRES y CGR
+V,CL-REG-05,REGION,GOVERNED_ROMAN,Numeral romano usado por DIPRES y CGR
+VI,CL-REG-06,REGION,GOVERNED_ROMAN,Numeral romano usado por DIPRES y CGR
+VII,CL-REG-07,REGION,GOVERNED_ROMAN,Numeral romano usado por DIPRES y CGR
+VIII,CL-REG-08,REGION,GOVERNED_ROMAN,Numeral romano usado por DIPRES y CGR
+IX,CL-REG-09,REGION,GOVERNED_ROMAN,Numeral romano usado por DIPRES y CGR
+X,CL-REG-10,REGION,GOVERNED_ROMAN,Numeral romano usado por DIPRES y CGR
+XI,CL-REG-11,REGION,GOVERNED_ROMAN,Numeral romano usado por DIPRES y CGR
+XII,CL-REG-12,REGION,GOVERNED_ROMAN,Numeral romano usado por DIPRES y CGR
+XIII,CL-REG-13,REGION,GOVERNED_ROMAN,Numeral romano histórico de la Región Metropolitana
+XIV,CL-REG-14,REGION,GOVERNED_ROMAN,Numeral romano usado por DIPRES y CGR
+XV,CL-REG-15,REGION,GOVERNED_ROMAN,Numeral romano usado por DIPRES y CGR
+XVI,CL-REG-16,REGION,GOVERNED_ROMAN,Numeral romano usado por DIPRES y CGR
+RM,CL-REG-13,REGION,GOVERNED_ABBREVIATION,Abreviatura de uso general
+Metropolitana,CL-REG-13,REGION,GOVERNED_NAME,Forma corta del nombre oficial
+Region Metropolitana,CL-REG-13,REGION,GOVERNED_NAME,Forma corriente en fuentes administrativas
+Metropolitana de Santiago,CL-REG-13,REGION,GOVERNED_NAME,Nombre oficial completo
+O'Higgins,CL-REG-06,REGION,GOVERNED_NAME,Forma corta de uso general
+Libertador Bernardo O'Higgins,CL-REG-06,REGION,GOVERNED_NAME,Variante sin el grado militar
+Libertador General Bernardo O'Higgins,CL-REG-06,REGION,GOVERNED_NAME,Nombre oficial completo
+Araucania,CL-REG-09,REGION,GOVERNED_NAME,Forma corta sin artículo
+Aysen,CL-REG-11,REGION,GOVERNED_NAME,Forma corta del nombre oficial
+Aisen,CL-REG-11,REGION,GOVERNED_NAME,Grafía alternativa histórica
+Aysen del General Carlos Ibanez del Campo,CL-REG-11,REGION,GOVERNED_NAME,Nombre oficial completo
+Magallanes,CL-REG-12,REGION,GOVERNED_NAME,Forma corta del nombre oficial
+Magallanes y Antartica Chilena,CL-REG-12,REGION,GOVERNED_NAME,Variante sin la preposición
+Magallanes y de la Antartica Chilena,CL-REG-12,REGION,GOVERNED_NAME,Nombre oficial completo
+Bio Bio,CL-REG-08,REGION,GOVERNED_NAME,Grafía separada del nombre oficial
+Nuble,CL-REG-16,REGION,GOVERNED_NAME,Grafía sin eñe frecuente en fuentes administrativas
+Tarapaca,CL-REG-01,REGION,GOVERNED_NAME,Grafía sin acento
+Valparaiso,CL-REG-05,REGION,GOVERNED_NAME,Grafía sin acento
+Los Rios,CL-REG-14,REGION,GOVERNED_NAME,Grafía sin acento

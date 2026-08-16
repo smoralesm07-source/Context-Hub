@@ -1,0 +1,25 @@
+{
+  "resolution_index_keys": {
+    "REGION": 41,
+    "COMMUNE": 346
+  },
+  "alias_rows": 35,
+  "by_type": {
+    "GOVERNED_NAME": 18,
+    "GOVERNED_ROMAN": 16,
+    "GOVERNED_ABBREVIATION": 1
+  },
+  "cross_level_ambiguous_keys": [
+    "AISEN",
+    "ANTOFAGASTA",
+    "COQUIMBO",
+    "LOSLAGOS",
+    "MAULE",
+    "OHIGGINS",
+    "VALPARAISO"
+  ],
+  "within_level_collisions": {},
+  "fuzzy_match_promoted_to_truth": false,
+  "resolution_policy": "EXACT_MATCH_ON_NORMALIZED_KEY_ONLY",
+  "status": "READY"
+}
