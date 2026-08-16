@@ -40,16 +40,19 @@ de CGR.
 **1. Sólo igualdad exacta.** No hay distancia de edición ni subcadenas. Lo que no cruza queda sin
 resolver y se reporta como brecha. `fuzzy_match_promoted_to_truth: false` viaja en el propio índice.
 
-**2. El nivel es obligatorio.** Siete claves existen en ambos niveles:
-
-```
-AISEN · ANTOFAGASTA · COQUIMBO · LOSLAGOS · MAULE · OHIGGINS · VALPARAISO
-```
+**2. El nivel es obligatorio.** Hay tres niveles indexados —`REGION` (41 claves), `PROVINCE` (56) y
+`COMMUNE` (346)— y **34 claves existen en más de uno**. 28 nombres de provincia son además nombres
+de comuna, y 3 son además nombres de región.
 
 El caso peligroso es **`LOSLAGOS`**: es la Región de Los Ríos quien tiene una comuna llamada «Los
 Lagos». Un índice plano de nombre a clave asignaría ese dato a la Región de Los Lagos, es decir a
 otra región. Por eso el llamador declara el nivel, y `level="ANY"` devuelve `AMBIGUOUS_LEVEL` en vez
 de adivinar.
+
+**2b. Una glosa compuesta debe concordar consigo misma.** El SII publica la región como
+`XIII REGION METROPOLITANA`: numeral romano y nombre en un mismo campo. Son dos señales
+independientes, así que se resuelven por separado y se exige que apunten al mismo lugar. Si
+discrepan —`IV REGION METROPOLITANA`— el resultado es `CONFLICTING_SIGNALS`, no una de las dos.
 
 **3. Un topónimo demasiado largo no es un topónimo.** El nombre canónico más largo del país tiene 35
 caracteres de clave; el guardia corta en 45. Una glosa mayor se clasifica `NOT_A_PLACE_NAME`, lo que
@@ -65,7 +68,8 @@ distinción es la que permite al Data Steward saber si debe arreglar el extracto
 | `UNRESOLVED_NAME_ONLY` | Glosa plausible sin equivalencia | evaluar alias gobernado |
 | `NOT_A_PLACE_NAME` | Texto arrastrado por el extractor | arreglar la extracción aguas arriba |
 | `UNKNOWN` | La fuente no trae territorio | nada que resolver |
-| `AMBIGUOUS_LEVEL` | La glosa existe en dos niveles | declarar el nivel |
+| `AMBIGUOUS_LEVEL` | La glosa existe en más de un nivel | declarar el nivel |
+| `CONFLICTING_SIGNALS` | Numeral y nombre de una glosa compuesta discrepan | revisar el dato de origen |
 
 ## Integrar un radar
 
@@ -83,10 +87,10 @@ distinción es la que permite al Data Steward saber si debe arreglar el extracto
 
 | Radar | Estado | Resolución medida |
 |---|---|---|
+| SII | integrado, tres niveles | 100% sobre la muestra provista (5 filas) |
 | CGR | integrado y medido | 97,3% de filas · 22 de 24 glosas distintas |
 | Delictual | ya usaba códigos CUT | `CODE_EXACT` nativo |
 | Context Hub | fuente canónica | — |
-| SII | pendiente | sin datos en el repositorio para medir |
 | Presupuesto | pendiente | sin datos en el repositorio para medir |
 | OSFL | pendiente | sin datos en el repositorio para medir |
 | UAF, Sanciones | territorio no es dimensión primaria | no aplica |
@@ -94,3 +98,24 @@ distinción es la que permite al Data Steward saber si debe arreglar el extracto
 Las dos glosas que CGR no resuelve son artefactos de extracción
 (`", oficina del SAG a cargo,"` y un párrafo con «Documento Asociado Descargar documento»), no
 topónimos faltantes. Se rechazan a propósito.
+
+
+## Deriva entre el hub y las copias vendorizadas
+
+Los radares copian el adaptador en vez de importar `context_hub`, así que la deriva entre ambas
+implementaciones es el riesgo real de ese diseño.
+`test_reference_adapter_agrees_with_the_hub` compara las dos sobre un corpus de 25 glosas y exige
+que el `territory_id` coincida siempre.
+
+El vocabulario de estados del adaptador es deliberadamente más grueso: el índice exportado aplana
+nombre canónico y alias en un solo mapa, de modo que no puede distinguir `VALIDATED_ALIAS` de
+`VALIDATED_EXACT`. Lo que nunca puede diferir es la clave, que es lo que entra a la capa de fusión.
+
+## Coherencia entre niveles
+
+Cuando una fuente publica región y comuna a la vez —como el SII— las dos claves se cruzan: el
+código CUT de comuna lleva la región en sus dos primeros dígitos. Una fila cuya comuna no pertenece
+a la región declarada se marca `REGION_COMMUNE_MISMATCH`.
+
+Ninguna de las dos claves se descarta ni se ajusta: el defecto es del dato de origen y corregirlo
+en silencio ocultaría un problema de calidad aguas arriba.

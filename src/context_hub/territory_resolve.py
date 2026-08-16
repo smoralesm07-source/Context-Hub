@@ -51,7 +51,35 @@ _PREFIXES = (
 # oficiales más largos sin dejar pasar párrafos completos.
 MAX_KEY_LEN = 45
 
-LEVELS = ("REGION", "COMMUNE", "ANY")
+LEVELS = ("REGION", "PROVINCE", "COMMUNE", "ANY")
+_INDEXED_LEVELS = ("REGION", "PROVINCE", "COMMUNE")
+
+# Numerales romanos de región. Se reconocen como token suelto dentro de una
+# glosa compuesta del tipo «XIII REGION METROPOLITANA», que publica el SII.
+ROMANS = frozenset(
+    ("I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X", "XI", "XII", "XIII", "XIV", "XV", "XVI")
+)
+_REGION_WORDS = frozenset(("REGION", "REGIONES", "REG"))
+
+
+def decompose_region(spaced: str) -> list[str]:
+    """Descompone una glosa regional compuesta en sus señales independientes.
+
+    «XIII REGION METROPOLITANA» lleva dos señales que deben coincidir: el
+    numeral romano y el nombre. Devolverlas por separado permite exigir acuerdo
+    en vez de creerle a una sola.
+    """
+    tokens = spaced.split()
+    if not tokens:
+        return []
+    romans = [t for t in tokens if t in ROMANS]
+    rest = [t for t in tokens if t not in ROMANS and t not in _REGION_WORDS]
+    keys = list(romans)
+    if rest:
+        remainder = strip_prefix(" ".join(rest)).replace(" ", "")
+        if remainder:
+            keys.append(remainder)
+    return keys
 
 
 @dataclass(frozen=True)
@@ -101,14 +129,29 @@ def _read_jsonl(path: Path) -> list[dict]:
 class TerritoryResolver:
     """Índices por nivel construidos desde las dimensiones canónicas y los alias."""
 
-    def __init__(self, regions: list[dict], communes: list[dict], aliases: list[dict]):
-        self._index: dict[str, dict[str, set[str]]] = {"REGION": {}, "COMMUNE": {}}
+    def __init__(self, regions: list[dict], communes: list[dict], aliases: list[dict],
+                 provinces: list[dict] | None = None):
+        self._index: dict[str, dict[str, set[str]]] = {lv: {} for lv in _INDEXED_LEVELS}
         self._method: dict[tuple[str, str], str] = {}
 
         for row in regions:
             self._add("REGION", row["canonical_name"], row["territory_id"], "VALIDATED_EXACT")
         for row in communes:
             self._add("COMMUNE", row["canonical_name"], row["territory_id"], "VALIDATED_EXACT")
+
+        # Las provincias no tienen tabla propia: se derivan de las comunas, que
+        # ya traen province_id y province_name desde CUT.
+        if provinces is None:
+            provinces = []
+            seen_prov: set[str] = set()
+            for row in communes:
+                pid = row.get("province_id")
+                if pid and pid not in seen_prov:
+                    seen_prov.add(pid)
+                    provinces.append({"territory_id": pid, "canonical_name": row.get("province_name")})
+        for row in provinces:
+            if row.get("canonical_name"):
+                self._add("PROVINCE", row["canonical_name"], row["territory_id"], "VALIDATED_EXACT")
 
         for row in aliases:
             if row.get("status", "ACTIVE") != "ACTIVE":
@@ -138,7 +181,33 @@ class TerritoryResolver:
 
     def cross_level_keys(self) -> set[str]:
         """Claves presentes en más de un nivel; irresolubles sin declarar nivel."""
-        return set(self._index["REGION"]) & set(self._index["COMMUNE"])
+        seen: dict[str, int] = {}
+        for index in self._index.values():
+            for key in index:
+                seen[key] = seen.get(key, 0) + 1
+        return {k for k, n in seen.items() if n > 1}
+
+    def _lookup(self, level: str, key: str) -> set[str]:
+        return self._index[level].get(key, set())
+
+    def _resolve_compound_region(self, raw: str) -> Resolution | None:
+        """Resuelve una glosa regional que trae numeral y nombre a la vez.
+
+        Devuelve `None` si la glosa no es compuesta, para que el llamador siga
+        su curso normal. Si las dos señales apuntan a regiones distintas, no se
+        elige una: se devuelve `CONFLICTING_SIGNALS`.
+        """
+        candidates = decompose_region(spaced_form(raw))
+        if len(candidates) < 2:
+            return None
+        found: set[str] = set()
+        for candidate in candidates:
+            found |= self._lookup("REGION", candidate)
+        if not found:
+            return None
+        if len(found) > 1:
+            return Resolution(None, None, "UNRESOLVED", 0.0, raw, "CONFLICTING_SIGNALS")
+        return Resolution(next(iter(found)), "REGION", "VALIDATED_COMPOUND", 1.0, raw)
 
     def resolve(self, text: object, level: str = "ANY") -> Resolution:
         """Resuelve una glosa. `level` acota el índice consultado."""
@@ -148,11 +217,12 @@ class TerritoryResolver:
         raw = str(text or "").strip()
 
         # Un código CUT ya canónico entra directo, sin pasar por nombres.
-        direct = re.fullmatch(r"(?:CL-(REG|COM)-)?(\d{2}|\d{5})", raw.upper())
+        # La longitud determina el nivel: 2 región, 3 provincia, 5 comuna.
+        direct = re.fullmatch(r"(?:CL-(?:REG|PROV|COM)-)?(\d{2}|\d{3}|\d{5})", raw.upper())
         if direct:
-            digits = direct.group(2)
-            found = "REGION" if len(digits) == 2 else "COMMUNE"
-            prefix = "REG" if found == "REGION" else "COM"
+            digits = direct.group(1)
+            found = {2: "REGION", 3: "PROVINCE", 5: "COMMUNE"}[len(digits)]
+            prefix = {"REGION": "REG", "PROVINCE": "PROV", "COMMUNE": "COM"}[found]
             if level in (found, "ANY"):
                 return Resolution(f"CL-{prefix}-{digits}", found, "CODE_EXACT", 1.0, raw)
 
@@ -165,10 +235,16 @@ class TerritoryResolver:
         if len(key) > MAX_KEY_LEN:
             return Resolution(None, None, "UNRESOLVED", 0.0, raw, "NOT_A_PLACE_NAME")
 
-        levels = ("REGION", "COMMUNE") if level == "ANY" else (level,)
+        levels = _INDEXED_LEVELS if level == "ANY" else (level,)
         hits = [(lv, self._index[lv][key]) for lv in levels if key in self._index[lv]]
 
         if not hits:
+            # Glosa regional compuesta del tipo «XIII REGION METROPOLITANA»:
+            # se exige que el numeral romano y el nombre apunten al mismo lugar.
+            if level in ("REGION", "ANY"):
+                compound = self._resolve_compound_region(raw)
+                if compound is not None:
+                    return compound
             return Resolution(None, None, "UNRESOLVED", 0.0, raw, "NO_MATCH")
         if len(hits) > 1:
             # «Valparaíso» es región y comuna. Sin nivel declarado no se elige.
@@ -219,6 +295,14 @@ def export_index(resolver: TerritoryResolver) -> dict:
         ),
         "max_key_len": MAX_KEY_LEN,
         "level_is_required": True,
+        "levels": list(_INDEXED_LEVELS),
+        # Para resolver glosas compuestas del tipo «XIII REGION METROPOLITANA»:
+        # el adaptador separa numeral y nombre, y exige que ambos coincidan.
+        "compound_region": {
+            "romans": sorted(ROMANS, key=lambda r: (len(r), r)),
+            "region_words": sorted(_REGION_WORDS),
+            "policy": "ALL_SIGNALS_MUST_AGREE_OR_CONFLICTING_SIGNALS",
+        },
         "cross_level_ambiguous_keys": sorted(resolver.cross_level_keys()),
         "index": {
             level: {k: next(iter(v)) for k, v in sorted(index.items()) if len(v) == 1}
