@@ -4,8 +4,8 @@
     "download": {
       "source_id": "INE_CENSO2024_INMIGRACION",
       "status": "CURRENT",
-      "last_successful_refresh_at": "2026-08-24T13:16:12.624093+00:00",
-      "last_attempt_at": "2026-08-24T13:16:12.624093+00:00",
+      "last_successful_refresh_at": "2026-08-31T19:08:51.081245+00:00",
+      "last_attempt_at": "2026-08-31T19:08:51.081245+00:00",
       "content_sha256": "8350215eb4fb5379bf408ef32e064c35b584026d8699d7866846cac71683297c",
       "bytes": 291837,
       "error": null
@@ -33,8 +33,8 @@
     "primary": {
       "source_id": "SUBDERE_CUT",
       "status": "CURRENT",
-      "last_successful_refresh_at": "2026-08-24T13:16:14.271189+00:00",
-      "last_attempt_at": "2026-08-24T13:16:14.271189+00:00",
+      "last_successful_refresh_at": "2026-08-31T19:08:52.957037+00:00",
+      "last_attempt_at": "2026-08-31T19:08:52.957037+00:00",
       "content_sha256": "d1b7fc3abb93cea3d115861579297d8bbdc9a7c762c958e646cd01b804df1ea0",
       "bytes": 69120,
       "error": null
