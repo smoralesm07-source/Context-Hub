@@ -6,8 +6,8 @@
   "province_rows": 56,
   "status": "READY",
   "canonical_key_source": "SUBDERE_CUT",
-  "materialization_source": "SUBDERE_CUT",
-  "materialization_source_tier": "PRIMARY_OFFICIAL",
+  "materialization_source": "MOP_IDE_DPA_SUBDERE+INE_CENSO2024_INMIGRACION",
+  "materialization_source_tier": "OFFICIAL_SECONDARY",
   "canonical_commune_format": "CL-COM-{CUT_COM}",
   "name_is_key": false,
   "fuzzy_match_promoted_to_truth": false
