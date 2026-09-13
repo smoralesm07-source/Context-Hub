@@ -1,0 +1,1 @@
+Temporary possession-token, read-only admin preview. Remove when normal authentication is restored.
