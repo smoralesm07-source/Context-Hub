@@ -3,7 +3,8 @@ const _taskItemOpsCore=taskItem;
 taskItem=function(x){
   const slaClass=x.sla_state==='OVERDUE'?'red':x.sla_state==='DUE_SOON'?'amber':'green';
   const due=x.due_at?(' · vence '+dt(x.due_at)):'';
-  return '<div class="item" data-task="'+esc(x.task_id)+'"><div class="r"><div>'+chip(x.object_type,x.object_type==='INTAKE'?'blue':x.object_type==='ATTENTION'?'amber':x.object_type==='SIMCASE'?'green':'violet')+' '+workflow(x.workflow_state)+' '+chip(x.sla_state||'ON_TRACK',slaClass)+'</div><span class="tiny muted">P'+esc(x.priority_score)+'</span></div><h4>'+esc(x.title)+'</h4><p>'+esc(label(x.system_state))+' · '+(x.assignee_name?'Responsable: '+esc(x.assignee_name):'Sin asignar')+due+'</p></div>';
+  const guidance=x.recommended_workflow_action?'<div class="tiny muted" style="margin-top:5px">Siguiente paso de workflow: <b>'+esc(label(x.recommended_workflow_action))+'</b></div>':'';
+  return '<div class="item" data-task="'+esc(x.task_id)+'"><div class="r"><div>'+chip(x.object_type,x.object_type==='INTAKE'?'blue':x.object_type==='ATTENTION'?'amber':x.object_type==='SIMCASE'?'green':'violet')+' '+workflow(x.workflow_state)+' '+chip(x.sla_state||'ON_TRACK',slaClass)+'</div><span class="tiny muted">P'+esc(x.priority_score)+'</span></div><h4>'+esc(x.title)+'</h4><p>'+esc(label(x.system_state))+' · '+(x.assignee_name?'Responsable: '+esc(x.assignee_name):'Sin asignar')+due+'</p>'+guidance+'</div>';
 };
 
 function workloadPanel(){
@@ -38,6 +39,8 @@ async function loadOpsManagement(redraw=true){
 
 function appendCaseLog(el,type,key){
   const body=el?.querySelector('.dbody');if(!body)return;
+  const task=TASKS.find(x=>x.object_type===type&&x.object_key===key);
+  if(task?.workflow_reason){const g=document.createElement('div');g.className='notice';g.style.marginBottom='8px';g.innerHTML='<b>Siguiente paso de workflow:</b> '+esc(label(task.recommended_workflow_action))+'<br>'+esc(task.workflow_reason)+'<br><span class="tiny">Guía operativa; no constituye recomendación analítica.</span>';body.appendChild(g)}
   const block=document.createElement('div');block.className='block';block.style.marginTop='8px';
   block.innerHTML='<h4>Bitácora operacional</h4><p>Acciones, asignaciones, solicitudes de evidencia y escalaciones del sandbox.</p><button class="btn" data-load-log="1">Ver bitácora completa</button><div class="opslog" style="margin-top:8px"></div>';
   body.appendChild(block);
