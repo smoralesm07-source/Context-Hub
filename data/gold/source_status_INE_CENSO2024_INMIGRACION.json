@@ -1,8 +1,8 @@
 {
   "source_id": "INE_CENSO2024_INMIGRACION",
   "status": "CURRENT",
-  "last_successful_refresh_at": "2026-09-07T17:45:52.783265+00:00",
-  "last_attempt_at": "2026-09-07T17:45:52.783265+00:00",
+  "last_successful_refresh_at": "2026-09-14T18:05:45.622815+00:00",
+  "last_attempt_at": "2026-09-14T18:05:45.622815+00:00",
   "content_sha256": "8350215eb4fb5379bf408ef32e064c35b584026d8699d7866846cac71683297c",
   "bytes": 291837,
   "error": null
