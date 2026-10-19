@@ -4,8 +4,8 @@
     "download": {
       "source_id": "INE_CENSO2024_INMIGRACION",
       "status": "CURRENT",
-      "last_successful_refresh_at": "2026-10-12T21:18:05.842317+00:00",
-      "last_attempt_at": "2026-10-12T21:18:05.842317+00:00",
+      "last_successful_refresh_at": "2026-10-19T18:44:19.184467+00:00",
+      "last_attempt_at": "2026-10-19T18:44:19.184467+00:00",
       "content_sha256": "8350215eb4fb5379bf408ef32e064c35b584026d8699d7866846cac71683297c",
       "bytes": 291837,
       "error": null
@@ -34,7 +34,7 @@
       "source_id": "SUBDERE_CUT",
       "status": "UNKNOWN",
       "last_successful_refresh_at": "2026-09-21T18:13:28.507982+00:00",
-      "last_attempt_at": "2026-10-12T21:18:07.796683+00:00",
+      "last_attempt_at": "2026-10-19T18:44:20.649502+00:00",
       "content_sha256": "d1b7fc3abb93cea3d115861579297d8bbdc9a7c762c958e646cd01b804df1ea0",
       "bytes": 0,
       "error": "HTTPError: 403 Client Error: Forbidden for url: https://www.subdere.gov.cl/sites/default/files/documentos/CUT_2018_v04.xls"
